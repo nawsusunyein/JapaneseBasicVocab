@@ -24,11 +24,12 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var switchPurpleColor: UISwitch!
     
     private var choosenLanguage : String?
+    private var defaults : UserDefaults?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let defaults = UserDefaults.standard
-        choosenLanguage = defaults.string(forKey: "Lang")
+        self.defaults = UserDefaults.standard
+        choosenLanguage = defaults!.string(forKey: "Lang")
         
         if(choosenLanguage == "mm"){
             self.switchMyanmar.setOn(true, animated: false)
@@ -39,8 +40,8 @@ class SettingsViewController: UIViewController {
             self.switchChinese.setOn(false, animated: false)
             self.switchMyanmar.setOn(false, animated: false)
         }else{
-            self.switchEnglish.setOn(true, animated: false)
-            self.switchChinese.setOn(false, animated: false)
+            self.switchChinese.setOn(true, animated: false)
+            self.switchEnglish.setOn(false, animated: false)
             self.switchMyanmar.setOn(false, animated: false)
         }
         
@@ -55,6 +56,13 @@ class SettingsViewController: UIViewController {
         if(self.switchMyanmar.isOn){
             self.switchEnglish.setOn(false, animated: false)
             self.switchChinese.setOn(false, animated: false)
+            self.defaults?.set("mm", forKey: "Lang")
+        }else if(!self.switchEnglish.isOn && !self.switchChinese.isOn){
+            self.showNoticeAlert()
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: {_ in
+                self.switchMyanmar.setOn(true, animated: false)
+            })
+            
         }
     }
     
@@ -63,6 +71,12 @@ class SettingsViewController: UIViewController {
         if(self.switchEnglish.isOn){
             self.switchMyanmar.setOn(false, animated: false)
             self.switchChinese.setOn(false, animated: false)
+            self.defaults?.set("en", forKey: "Lang")
+        }else if(!self.switchMyanmar.isOn && !self.switchChinese.isOn){
+            self.showNoticeAlert()
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: {_ in
+                self.switchEnglish.setOn(true, animated: false)
+            })
         }
     }
     
@@ -70,7 +84,19 @@ class SettingsViewController: UIViewController {
         if(self.switchChinese.isOn){
             self.switchEnglish.setOn(false, animated: false)
             self.switchMyanmar.setOn(false, animated: false)
+            self.defaults?.set("cn", forKey: "Lang")
+        }else if(!self.switchEnglish.isOn && !self.switchMyanmar.isOn){
+            self.showNoticeAlert()
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: {_ in
+                self.switchChinese.setOn(true, animated: false)
+            })
         }
     }
     
+    private func showNoticeAlert(){
+        let alertController = UIAlertController(title: "", message: "You need to choose at lease one language", preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "OK", style: .default, handler: {_ in})
+        alertController.addAction(okButton)
+        self.present(alertController, animated: true, completion: nil)
+    }
 }

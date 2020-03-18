@@ -24,7 +24,7 @@ class VocabListViewController: UIViewController {
         self.getVocabList()
         
         let defaults = UserDefaults.standard
-        let choosenLanguage = defaults.string(forKey: "Lang")
+        self.choosenLanguage = defaults.string(forKey: "Lang")
         
         vocabTable.register(UINib(nibName: "VocabListTableViewCell", bundle: nil), forCellReuseIdentifier: "VocabListTableViewCell")
     }
