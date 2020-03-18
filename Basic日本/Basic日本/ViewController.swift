@@ -12,6 +12,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     @IBOutlet weak var homeCollectionView: UICollectionView!
     private var choosenLanguage : String?
+    private var choosenColor : String?
+    private var defaults : UserDefaults?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,17 +21,36 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         self.setCollectionViewDelegate()
         self.registerCollectionViewCell()
         
-        let defaults = UserDefaults.standard
-        choosenLanguage = defaults.string(forKey: "Lang")
+        self.defaults = UserDefaults.standard
+        choosenLanguage = self.defaults!.string(forKey: "Lang")
+        choosenColor = self.defaults!.string(forKey: "Color")
         if(choosenLanguage == nil){
-            defaults.set("mm", forKey: "Lang")
+            self.defaults?.set("mm", forKey: "Lang")
         }
+        if(choosenColor == nil){
+            self.defaults?.set("1",forKey: "Color")
+        }
+        
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+        self.setBackgroundColor()
     }
+    
+    private func setBackgroundColor(){
+        choosenColor = self.defaults?.string(forKey: "Color")
+        if(choosenColor == "1"){
+             self.view.backgroundColor = UIColor(red: 124/255, green: 179/255, blue: 66/255, alpha: 1.0)
+        }else if(choosenColor == "2"){
+            self.view.backgroundColor = UIColor(red: 236/255, green: 64/255, blue: 122/255, alpha: 1.0)
+        }else if(choosenColor == "3"){
+             self.view.backgroundColor = UIColor(red: 26/255, green: 35/255, blue: 126/255, alpha: 1.0)
+        }
+    }
+    
     func setCollectionViewDelegate(){
         self.homeCollectionView.delegate = self
         self.homeCollectionView.dataSource = self

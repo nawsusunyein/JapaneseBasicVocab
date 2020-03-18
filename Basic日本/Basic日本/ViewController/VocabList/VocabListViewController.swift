@@ -15,6 +15,7 @@ class VocabListViewController: UIViewController {
     public var category : String!
     
     private var choosenLanguage : String?
+    private var choosenColor : String?
     
     private var vocabDb : DataBaseCreation = DataBaseCreation()
     private var vocabList : [VocabularyModel]?
@@ -25,8 +26,12 @@ class VocabListViewController: UIViewController {
         
         let defaults = UserDefaults.standard
         self.choosenLanguage = defaults.string(forKey: "Lang")
+        self.choosenColor = defaults.string(forKey: "Color")
+        
+        self.setBackgroundColor()
         
         vocabTable.register(UINib(nibName: "VocabListTableViewCell", bundle: nil), forCellReuseIdentifier: "VocabListTableViewCell")
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +39,16 @@ class VocabListViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
     }
 
+    private func setBackgroundColor(){
+        if(choosenColor == "1"){
+            self.vocabTable.backgroundColor = UIColor(red: 124/255, green: 179/255, blue: 66/255, alpha: 1.0)
+        }else if(choosenColor == "2"){
+            self.vocabTable.backgroundColor = UIColor(red: 236/255, green: 64/255, blue: 122/255, alpha: 1.0)
+        }else if(choosenColor == "3"){
+            self.vocabTable.backgroundColor = UIColor(red: 26/255, green: 35/255, blue: 126/255, alpha: 1.0)
+        }
+    }
+    
     private func getVocabList(){
         var queryStatementString : String? = ""
         

@@ -13,23 +13,25 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var switchMyanmar: UISwitch!
     @IBOutlet weak var switchEnglish: UISwitch!
     @IBOutlet weak var switchChinese: UISwitch!
-    @IBOutlet weak var switchGreen: UISwitch!
+    
     
     @IBOutlet weak var switchMyanLanguage: UISwitch!
     @IBOutlet weak var switchEngLanguage: UISwitch!
     @IBOutlet weak var switchCnLanguage: UISwitch!
     
-    @IBOutlet weak var switchGreenColor: UILabel!
+    @IBOutlet weak var switchGreenColor: UISwitch!
     @IBOutlet weak var switchPinkColor: UISwitch!
     @IBOutlet weak var switchPurpleColor: UISwitch!
     
     private var choosenLanguage : String?
+    private var choosenColor : String?
     private var defaults : UserDefaults?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.defaults = UserDefaults.standard
         choosenLanguage = defaults!.string(forKey: "Lang")
+        choosenColor = defaults!.string(forKey: "Color")
         
         if(choosenLanguage == "mm"){
             self.switchMyanmar.setOn(true, animated: false)
@@ -43,6 +45,20 @@ class SettingsViewController: UIViewController {
             self.switchChinese.setOn(true, animated: false)
             self.switchEnglish.setOn(false, animated: false)
             self.switchMyanmar.setOn(false, animated: false)
+        }
+        
+        if(choosenColor == "1"){
+            self.switchGreenColor.setOn(true, animated: false)
+            self.switchPinkColor.setOn(false, animated: false)
+            self.switchPurpleColor.setOn(false, animated: false)
+        }else if(choosenColor == "2"){
+            self.switchPinkColor.setOn(true, animated: false)
+            self.switchGreenColor.setOn(false, animated: false)
+            self.switchPurpleColor.setOn(false, animated: false)
+        }else{
+            self.switchPurpleColor.setOn(true, animated: false)
+            self.switchPinkColor.setOn(false, animated: false)
+            self.switchGreenColor.setOn(false, animated: false)
         }
         
     }
@@ -99,4 +115,44 @@ class SettingsViewController: UIViewController {
         alertController.addAction(okButton)
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    @IBAction func switchGreenColor(_ sender: Any) {
+        if(self.switchGreenColor.isOn){
+            self.switchPinkColor.setOn(false, animated: false)
+            self.switchPurpleColor.setOn(false, animated: false)
+            self.defaults?.set("1", forKey: "Color")
+        }else if(!self.switchPurpleColor.isOn && !self.switchPinkColor.isOn){
+            self.showNoticeAlert()
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: {_ in
+                self.switchGreenColor.setOn(true, animated: false)
+            })
+        }
+    }
+    
+    @IBAction func switchPinkColor(_ sender: Any) {
+        if(self.switchPinkColor.isOn){
+            self.switchGreenColor.setOn(false, animated: false)
+            self.switchPurpleColor.setOn(false, animated: false)
+            self.defaults?.set("2", forKey: "Color")
+        }else if(!self.switchPurpleColor.isOn && !self.switchGreenColor.isOn){
+            self.showNoticeAlert()
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: {_ in
+                self.switchPinkColor.setOn(true, animated: false)
+            })
+        }
+    }
+    
+    @IBAction func switchPurpleColor(_ sender: Any) {
+        if(self.switchPurpleColor.isOn){
+            self.switchPinkColor.setOn(false, animated: false)
+            self.switchGreenColor.setOn(false, animated: false)
+            self.defaults?.set("3", forKey: "Color")
+        }else if(!self.switchGreenColor.isOn && !self.switchPinkColor.isOn){
+            self.showNoticeAlert()
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: {_ in
+                self.switchPurpleColor.setOn(true, animated: false)
+            })
+        }
+    }
+    
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F2t-Nz-g7f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F2t-Nz-g7f">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -113,12 +113,18 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="S6b-Ic-JRX"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="switchGreenColor:" destination="F2t-Nz-g7f" eventType="valueChanged" id="eZp-kd-o3r"/>
+                                </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g2s-wd-Z5k">
                                 <rect key="frame" x="263" y="353" width="51" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="213-Bq-GdB"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="switchPinkColor:" destination="F2t-Nz-g7f" eventType="valueChanged" id="hDD-Hd-L8f"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttq-4r-cwJ">
                                 <rect key="frame" x="8" y="399" width="75" height="30"/>
@@ -136,6 +142,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="8id-FC-QcX"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="switchPurpleColor:" destination="F2t-Nz-g7f" eventType="valueChanged" id="mNS-Du-TjH"/>
+                                </connections>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -178,15 +187,11 @@
                     </view>
                     <connections>
                         <outlet property="switchChinese" destination="8V9-cH-ukE" id="Vlo-jS-KCb"/>
-                        <outlet property="switchCnLanguage" destination="8V9-cH-ukE" id="kPV-ow-0FE"/>
-                        <outlet property="switchEngLanguage" destination="uT9-Dh-fZM" id="U4q-72-IQr"/>
                         <outlet property="switchEnglish" destination="uT9-Dh-fZM" id="Mvy-Q3-alc"/>
-                        <outlet property="switchGreen" destination="43D-Yp-8hh" id="cTe-ht-ngb"/>
-                        <outlet property="switchGreenColor" destination="k6Y-x6-Fab" id="Ivj-8x-kAf"/>
-                        <outlet property="switchMyanLanguage" destination="khQ-bh-Y0a" id="w50-5f-Lhc"/>
+                        <outlet property="switchGreenColor" destination="43D-Yp-8hh" id="rSS-ku-bfv"/>
                         <outlet property="switchMyanmar" destination="khQ-bh-Y0a" id="MwN-Kp-CWh"/>
-                        <outlet property="switchPinkColor" destination="g2s-wd-Z5k" id="0wD-sH-eCg"/>
-                        <outlet property="switchPurpleColor" destination="gpe-Th-9sQ" id="gRh-Qn-YuX"/>
+                        <outlet property="switchPinkColor" destination="g2s-wd-Z5k" id="LEG-zB-zAL"/>
+                        <outlet property="switchPurpleColor" destination="gpe-Th-9sQ" id="buf-kq-ORc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Xw-Cx-LXF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
