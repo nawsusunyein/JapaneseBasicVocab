@@ -14,13 +14,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     private var choosenLanguage : String?
     private var choosenColor : String?
     private var defaults : UserDefaults?
-    private var vocabArray : Array<[String:String]>? = Array<[String:String]>()
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.setCollectionViewDelegate()
-        self.registerCollectionViewCell()
-        
         self.defaults = UserDefaults.standard
         choosenLanguage = self.defaults!.string(forKey: "Lang")
         choosenColor = self.defaults!.string(forKey: "Color")
@@ -37,6 +33,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
         self.setBackgroundColor()
+        self.setCollectionViewDelegate()
+        self.registerCollectionViewCell()
+        self.homeCollectionView.reloadData()
     }
     
    
@@ -76,6 +75,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
         print("index path cell \(indexPath.row)")
         print("collection view section :\(indexPath.section)")
+        choosenColor = self.defaults?.string(forKey: "Color")
         
         if indexPath.section == 0{
             if(indexPath.row == 0){
@@ -110,6 +110,19 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
                 cell.menuLabel.text = "Setting"
             }
         }
+        
+        cell.menuIcon.image = cell.menuIcon.image?.withRenderingMode(.alwaysTemplate)
+        if(self.choosenColor == "1"){
+            cell.menuIcon.tintColor = UIColor(red: 124/255, green: 179/255, blue: 66/255, alpha: 1.0)
+            cell.menuLabel.textColor = UIColor(red: 124/255, green: 179/255, blue: 66/255, alpha: 1.0)
+        }else if(self.choosenColor == "2"){
+            cell.menuIcon.tintColor = UIColor(red: 236/255, green: 64/255, blue: 122/255, alpha: 1.0)
+            cell.menuLabel.textColor = UIColor(red: 236/255, green: 64/255, blue: 122/255, alpha: 1.0)
+        }else if(self.choosenColor == "3"){
+            cell.menuIcon.tintColor = UIColor(red: 26/255, green: 35/255, blue: 126/255, alpha: 1.0)
+            cell.menuLabel.textColor = UIColor(red: 26/255, green: 35/255, blue: 126/255, alpha: 1.0)
+        }
+        
         return cell
     }
     
@@ -117,23 +130,31 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("index row : \(indexPath.row)")
         
-        if(indexPath.row != 7){
+        if(indexPath.section == 0 || indexPath.section == 1 || indexPath.section == 2 || (indexPath.section == 3 && indexPath.row == 0)){
             let storyboard = UIStoryboard(name: "VocabListStoryBoard", bundle: nil)
-             let vc = storyboard.instantiateViewController(withIdentifier: "VocabListViewController") as! VocabListViewController
-             
-             if(indexPath.row == 0){
-                 vc.category = Category.CategoryKey.NumberKey
-             }else if(indexPath.row == 3){
+            let vc = storyboard.instantiateViewController(withIdentifier: "VocabListViewController") as! VocabListViewController
+            if(indexPath.section == 0 && indexPath.row == 0){
+                vc.category = Category.CategoryKey.NumberKey
+            }else if(indexPath.section == 0 && indexPath.row == 1){
+                vc.category = Category.CategoryKey.DayKey
+            }else if(indexPath.section == 1 && indexPath.row == 0){
+                vc.category = Category.CategoryKey.FamilyKey
+            }else if(indexPath.section == 1 && indexPath.row == 1){
                 vc.category = Category.CategoryKey.AnimalKey
+            }else if(indexPath.section == 2 && indexPath.row == 0){
+                vc.category = Category.CategoryKey.ColorKey
+            }else if(indexPath.section == 2 && indexPath.row == 1){
+                vc.category = Category.CategoryKey.FruitKey
+            }else if(indexPath.section == 3 && indexPath.row == 0){
+                vc.category = Category.CategoryKey.FavoriteKey
             }
-            
-             self.navigationController?.pushViewController(vc, animated: true)
-        }else{
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else if(indexPath.section == 3 && indexPath.row == 1){
             let storyboard = UIStoryboard(name: "Storyboard", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
-            
             self.navigationController?.pushViewController(vc, animated: true)
         }
+     
     }
     
 }

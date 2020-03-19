@@ -147,6 +147,15 @@ extension VocabListViewController : UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "VocabListTableViewCell", for: indexPath) as! VocabListTableViewCell
         let vocabValue = self.vocabList![indexPath.row]
+        
+        let origVoiceImg = UIImage(named: "voice")
+        let tintVoiceImg = origVoiceImg?.withRenderingMode(.alwaysTemplate)
+        cell.imgVoice.setImage(tintVoiceImg, for: .normal)
+        
+        let origUnFavImg = UIImage(named: "unfavorite")
+        let tintUnFavImg = origUnFavImg?.withRenderingMode(.alwaysTemplate)
+        cell.imgFavorite.setImage(tintUnFavImg, for: .normal)
+        
         cell.lblJpWord.text =  vocabValue.jpVocab
         cell.lblRomaWord.text = vocabValue.romaPronounce
         if choosenLanguage == "mm"{
@@ -157,6 +166,16 @@ extension VocabListViewController : UITableViewDataSource,UITableViewDelegate{
             cell.lblMeaningWord.text = vocabValue.cnVocab
         }
         
+        if(choosenColor == "1"){
+            cell.imgVoice.tintColor = UIColor(red: 124/255, green: 179/255, blue: 66/255, alpha: 1.0)
+            cell.imgFavorite.tintColor = UIColor(red: 124/255, green: 179/255, blue: 66/255, alpha: 1.0)
+        }else if(choosenColor == "2"){
+            cell.imgVoice.tintColor = UIColor(red: 236/255, green: 64/255, blue: 122/255, alpha: 1.0)
+            cell.imgFavorite.tintColor = UIColor(red: 236/255, green: 64/255, blue: 122/255, alpha: 1.0)
+        }else if(choosenColor == "3"){
+            cell.imgVoice.tintColor = UIColor(red: 26/255, green: 35/255, blue: 126/255, alpha: 1.0)
+            cell.imgFavorite.tintColor = UIColor(red: 26/255, green: 35/255, blue: 126/255, alpha: 1.0)
+        }
         
         return cell
     }
