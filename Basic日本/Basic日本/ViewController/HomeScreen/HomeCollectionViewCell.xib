@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,28 +20,45 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgv-j9-J3i">
                         <rect key="frame" x="0.0" y="0.0" width="120" height="100"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="number" translatesAutoresizingMaskIntoConstraints="NO" id="Qiv-1o-fCE">
-                                <rect key="frame" x="27.5" y="8" width="65" height="50"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZXY-lb-8bx">
+                                <rect key="frame" x="17.5" y="12.5" width="85" height="75"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="number" translatesAutoresizingMaskIntoConstraints="NO" id="Qiv-1o-fCE">
+                                        <rect key="frame" x="10" y="0.0" width="65" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Bgd-Pz-E0f"/>
+                                            <constraint firstAttribute="width" constant="65" id="Bxl-o1-APX"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I85-4p-3OA">
+                                        <rect key="frame" x="0.0" y="50" width="85" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="VEH-hg-Xvj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.48627450980392156" green="0.70196078431372544" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="65" id="OuF-D3-q1Y"/>
-                                    <constraint firstAttribute="height" constant="50" id="d6i-lt-5d9"/>
+                                    <constraint firstAttribute="trailing" secondItem="I85-4p-3OA" secondAttribute="trailing" id="1YE-fQ-mKU"/>
+                                    <constraint firstItem="Qiv-1o-fCE" firstAttribute="top" secondItem="ZXY-lb-8bx" secondAttribute="top" id="G2v-WB-p09"/>
+                                    <constraint firstItem="I85-4p-3OA" firstAttribute="centerX" secondItem="Qiv-1o-fCE" secondAttribute="centerX" id="Jjl-OT-1Gd"/>
+                                    <constraint firstItem="I85-4p-3OA" firstAttribute="top" secondItem="Qiv-1o-fCE" secondAttribute="bottom" id="NIU-Gf-RvC"/>
+                                    <constraint firstAttribute="bottom" secondItem="I85-4p-3OA" secondAttribute="bottom" constant="4" id="SAV-xH-b6l"/>
+                                    <constraint firstAttribute="height" constant="75" id="byI-Bi-gFS"/>
+                                    <constraint firstItem="Qiv-1o-fCE" firstAttribute="centerX" secondItem="ZXY-lb-8bx" secondAttribute="centerX" id="pOd-Lt-HRe"/>
+                                    <constraint firstItem="I85-4p-3OA" firstAttribute="leading" secondItem="ZXY-lb-8bx" secondAttribute="leading" id="uXB-cD-Nyi"/>
+                                    <constraint firstAttribute="width" constant="85" id="ws1-bE-9Ao"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I85-4p-3OA">
-                                <rect key="frame" x="29" y="71" width="62" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.48627450980392156" green="0.70196078431372544" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Qiv-1o-fCE" firstAttribute="centerX" secondItem="xgv-j9-J3i" secondAttribute="centerX" id="4BI-j1-ao5"/>
-                            <constraint firstAttribute="width" constant="120" id="6me-jc-t2G"/>
-                            <constraint firstAttribute="bottom" secondItem="I85-4p-3OA" secondAttribute="bottom" constant="8" id="6or-2Z-4zb"/>
-                            <constraint firstItem="I85-4p-3OA" firstAttribute="centerX" secondItem="xgv-j9-J3i" secondAttribute="centerX" id="A0K-WD-gMt"/>
-                            <constraint firstAttribute="height" constant="100" id="GKO-cD-zHk"/>
-                            <constraint firstItem="Qiv-1o-fCE" firstAttribute="top" secondItem="xgv-j9-J3i" secondAttribute="top" constant="8" id="khJ-lF-zyx"/>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="120" id="6me-jc-t2G"/>
+                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="GKO-cD-zHk"/>
+                            <constraint firstItem="ZXY-lb-8bx" firstAttribute="centerY" secondItem="xgv-j9-J3i" secondAttribute="centerY" id="Gme-Oc-Ib4"/>
+                            <constraint firstItem="ZXY-lb-8bx" firstAttribute="centerX" secondItem="xgv-j9-J3i" secondAttribute="centerX" id="SSm-NC-xr9"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -56,10 +73,12 @@
             <size key="customSize" width="120" height="100"/>
             <connections>
                 <outlet property="cardView" destination="xgv-j9-J3i" id="qqc-zP-rfS"/>
+                <outlet property="cardViewHeight" destination="GKO-cD-zHk" id="3aj-JN-DgQ"/>
+                <outlet property="cardViewWidth" destination="6me-jc-t2G" id="Sc0-KS-1HD"/>
                 <outlet property="menuIcon" destination="Qiv-1o-fCE" id="Ghb-fu-vYd"/>
                 <outlet property="menuLabel" destination="I85-4p-3OA" id="u5p-RT-0jL"/>
             </connections>
-            <point key="canvasLocation" x="36.231884057971016" y="91.741071428571431"/>
+            <point key="canvasLocation" x="23.188405797101453" y="99.776785714285708"/>
         </collectionViewCell>
     </objects>
     <resources>

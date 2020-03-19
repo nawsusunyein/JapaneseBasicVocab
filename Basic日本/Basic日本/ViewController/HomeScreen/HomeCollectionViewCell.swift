@@ -14,10 +14,15 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var menuIcon: UIImageView!
     @IBOutlet weak var menuLabel: UILabel!
     
+    @IBOutlet weak var cardViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var cardViewWidth: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         cardView.layer.cornerRadius = 10.0
+    
     }
 
 }

@@ -14,7 +14,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     private var choosenLanguage : String?
     private var choosenColor : String?
     private var defaults : UserDefaults?
-    
+    private var vocabArray : Array<[String:String]>? = Array<[String:String]>()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,8 +30,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         if(choosenColor == nil){
             self.defaults?.set("1",forKey: "Color")
         }
-        
-        
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +38,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         self.navigationController?.navigationBar.isHidden = true
         self.setBackgroundColor()
     }
+    
+   
     
     private func setBackgroundColor(){
         choosenColor = self.defaults?.string(forKey: "Color")
@@ -63,40 +64,51 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     // Collection View Methods
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return 4
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return 2
     }
     
+   
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
         print("index path cell \(indexPath.row)")
-        if(indexPath.row == 0){
-            cell.menuIcon.image = UIImage(named: "number")
-            cell.menuLabel.text = "Number"
-        }else if(indexPath.row == 1){
-            cell.menuIcon.image = UIImage(named: "day")
-                       cell.menuLabel.text = "Day/Month"
-        }else if(indexPath.row == 2){
-           cell.menuIcon.image = UIImage(named: "family")
-           cell.menuLabel.text = "Family"
-        }else if(indexPath.row == 3){
-            cell.menuIcon.image = UIImage(named: "animals")
-            cell.menuLabel.text = "Animals"
-        }else if(indexPath.row == 4){
-            cell.menuIcon.image = UIImage(named: "color")
-            cell.menuLabel.text = "Color"
-        }else if(indexPath.row == 5){
-            cell.menuIcon.image = UIImage(named: "fruit")
-                       cell.menuLabel.text = "Fruits"
-        }else if(indexPath.row == 6){
-           cell.menuIcon.image = UIImage(named: "favorite")
-           cell.menuLabel.text = "Favorite"
-        }else if(indexPath.row == 7){
-            cell.menuIcon.image = UIImage(named: "setting")
-            cell.menuLabel.text = "Setting"
+        print("collection view section :\(indexPath.section)")
+        
+        if indexPath.section == 0{
+            if(indexPath.row == 0){
+                cell.menuIcon.image = UIImage(named: "number")
+                cell.menuLabel.text = "Number"
+            }else{
+                cell.menuIcon.image = UIImage(named: "day")
+                cell.menuLabel.text = "Day/Month"
+            }
+        }else if indexPath.section == 1{
+            if(indexPath.row == 0){
+                cell.menuIcon.image = UIImage(named: "family")
+                cell.menuLabel.text = "Family"
+            }else{
+                cell.menuIcon.image = UIImage(named: "animals")
+                cell.menuLabel.text = "Animals"
+            }
+        }else if indexPath.section == 2{
+            if(indexPath.row == 0){
+                cell.menuIcon.image = UIImage(named: "color")
+                cell.menuLabel.text = "Color"
+            }else{
+                cell.menuIcon.image = UIImage(named: "fruit")
+                cell.menuLabel.text = "Fruits"
+            }
+        }else if indexPath.section == 3{
+            if(indexPath.row == 0){
+                cell.menuIcon.image = UIImage(named: "favorite")
+                cell.menuLabel.text = "Favorite"
+            }else{
+                cell.menuIcon.image = UIImage(named: "setting")
+                cell.menuLabel.text = "Setting"
+            }
         }
         return cell
     }
@@ -124,7 +136,31 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         }
     }
     
-    
-
 }
 
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if(UIDevice.modelName == "iPhone 4" || UIDevice.modelName == "iPhone 4s" || UIDevice.modelName == "iPhone 5" || UIDevice.modelName == "iPhone 5c" || UIDevice.modelName == "iPhone 5s" || UIDevice.modelName == "iPhone SE"){
+           return CGSize(width: 110, height: 90)
+        }else if(UIDevice.modelName == "iPhone 8 Plus" || UIDevice.modelName == "iPhone 6 Plus" || UIDevice.modelName == "iPhone 6s Plus" || UIDevice.modelName == "iPhone 7 Plus" || UIDevice.modelName == "iPhone 8 Plus" || UIDevice.modelName == "iPhone X" || UIDevice.modelName == "iPhone XS" || UIDevice.modelName == "iPhone XS Max" || UIDevice.modelName == "iPhone XR" || UIDevice.modelName == "iPhone 11" || UIDevice.modelName == "iPhone 11 Pro" || UIDevice.modelName == "iPhone 11 Pro Max"){
+            return CGSize(width: 150, height: 130)
+        }else{
+            return CGSize(width: 120, height: 100)
+        }
+        //return CGSize(width: 120, height: 100)
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 20.0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout
+        collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 20.0
+    }
+}
