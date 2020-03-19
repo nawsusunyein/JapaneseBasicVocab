@@ -177,6 +177,9 @@ extension VocabListViewController : UITableViewDataSource,UITableViewDelegate{
             cell.imgFavorite.tintColor = UIColor(red: 26/255, green: 35/255, blue: 126/255, alpha: 1.0)
         }
         
+        cell.favButtonPressed = {
+            print("here entered")
+        }
         return cell
     }
     

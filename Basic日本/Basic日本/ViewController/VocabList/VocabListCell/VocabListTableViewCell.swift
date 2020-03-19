@@ -17,6 +17,7 @@ class VocabListTableViewCell: UITableViewCell {
     @IBOutlet weak var imgVoice: UIButton!
     @IBOutlet weak var imgFavorite: UIButton!
     
+    public var favButtonPressed : (() -> ()) = {}
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -27,6 +28,10 @@ class VocabListTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func pressFavButton(_ sender: Any) {
+        favButtonPressed()
     }
     
 }

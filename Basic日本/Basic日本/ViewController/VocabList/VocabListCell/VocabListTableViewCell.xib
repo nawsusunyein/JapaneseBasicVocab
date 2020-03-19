@@ -45,6 +45,9 @@
                                     <constraint firstAttribute="width" constant="30" id="HDD-If-MkT"/>
                                     <constraint firstAttribute="height" constant="30" id="o6M-W7-ah2"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="pressFavButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="RA5-yo-DyZ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="jyuuni" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paW-wN-Ynk">
                                 <rect key="frame" x="93.5" y="8" width="45.5" height="21"/>
