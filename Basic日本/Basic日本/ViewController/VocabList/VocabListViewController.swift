@@ -33,7 +33,11 @@ class VocabListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = false
-        if(self.category == "1"){
+        self.setTitleForScreen()
+    }
+
+    private func setTitleForScreen(){
+       if(self.category == "1"){
             self.title = "lbl_number".localized(self.localizedLanguage!)
         }else if(self.category == "2"){
             self.title = "lbl_day_month".localized(self.localizedLanguage!)
@@ -49,7 +53,7 @@ class VocabListViewController: UIViewController {
             self.title = "lbl_favorite".localized(self.localizedLanguage!)
         }
     }
-
+    
     private func setBackgroundColor(){
         if(choosenColor == "1"){
             self.vocabTable.backgroundColor = UIColor(red: 124/255, green: 179/255, blue: 66/255, alpha: 1.0)
