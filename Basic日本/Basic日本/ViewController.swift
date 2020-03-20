@@ -11,34 +11,56 @@ import UIKit
 class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource{
     
     @IBOutlet weak var homeCollectionView: UICollectionView!
+    
     private var choosenLanguage : String?
     private var choosenColor : String?
     private var defaults : UserDefaults?
+    private var localizedLanguage : String?
    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.defaults = UserDefaults.standard
-        choosenLanguage = self.defaults!.string(forKey: "Lang")
-        choosenColor = self.defaults!.string(forKey: "Color")
-        if(choosenLanguage == nil){
-            self.defaults?.set("mm", forKey: "Lang")
-        }
-        if(choosenColor == nil){
-            self.defaults?.set("1",forKey: "Color")
-        }
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+        self.setChosenLanguage(finish: {_ in
+            self.setLanguageToLoadLocalizableFile()
+        })
+        self.setChosenColor()
         self.setBackgroundColor()
         self.setCollectionViewDelegate()
         self.registerCollectionViewCell()
         self.homeCollectionView.reloadData()
     }
     
-   
+    private func setChosenLanguage(finish : (_ success : Bool) -> Void){
+        choosenLanguage = self.defaults!.string(forKey: "Lang")
+        if(choosenLanguage == nil){
+            self.defaults?.set("mm", forKey: "Lang")
+            self.choosenLanguage = "mm"
+        }
+        finish(true)
+    }
+    
+    private func setChosenColor(){
+       choosenColor = self.defaults!.string(forKey: "Color")
+       if(choosenColor == nil){
+            self.defaults?.set("1",forKey: "Color")
+        self.choosenColor = "1"
+        }
+    }
+    
+    private func setLanguageToLoadLocalizableFile(){
+        if(choosenLanguage == "mm"){
+            self.localizedLanguage = "my-MM"
+        }else if(choosenLanguage == "en"){
+            self.localizedLanguage = "en"
+        }else if(choosenLanguage == "cn"){
+            self.localizedLanguage = "zh-Hans"
+        }
+    }
     
     private func setBackgroundColor(){
         choosenColor = self.defaults?.string(forKey: "Color")
@@ -80,31 +102,31 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         if indexPath.section == 0{
             if(indexPath.row == 0){
                 cell.menuIcon.image = UIImage(named: "number")
-                cell.menuLabel.text = "Number"
+                cell.menuLabel.text = "lbl_number".localized(self.localizedLanguage!)
             }else{
                 cell.menuIcon.image = UIImage(named: "day")
-                cell.menuLabel.text = "Day/Month"
+                cell.menuLabel.text = "lbl_day_month".localized(self.localizedLanguage!)
             }
         }else if indexPath.section == 1{
             if(indexPath.row == 0){
                 cell.menuIcon.image = UIImage(named: "family")
-                cell.menuLabel.text = "Family"
+                cell.menuLabel.text = "lbl_family".localized(self.localizedLanguage!)
             }else{
                 cell.menuIcon.image = UIImage(named: "animals")
-                cell.menuLabel.text = "Animals"
+                cell.menuLabel.text = "lbl_animal".localized(self.localizedLanguage!)
             }
         }else if indexPath.section == 2{
             if(indexPath.row == 0){
                 cell.menuIcon.image = UIImage(named: "color")
-                cell.menuLabel.text = "Color"
+                cell.menuLabel.text = "lbl_color".localized(self.localizedLanguage!)
             }else{
                 cell.menuIcon.image = UIImage(named: "fruit")
-                cell.menuLabel.text = "Fruits"
+                cell.menuLabel.text = "lbl_fruits".localized(self.localizedLanguage!)
             }
         }else if indexPath.section == 3{
             if(indexPath.row == 0){
                 cell.menuIcon.image = UIImage(named: "favorite")
-                cell.menuLabel.text = "Favorite"
+                cell.menuLabel.text = "lbl_favorite".localized(self.localizedLanguage!)
             }else{
                 cell.menuIcon.image = UIImage(named: "setting")
                 cell.menuLabel.text = "Setting"
@@ -148,6 +170,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             }else if(indexPath.section == 3 && indexPath.row == 0){
                 vc.category = Category.CategoryKey.FavoriteKey
             }
+            vc.choosenLanguage = self.choosenLanguage
+            vc.choosenColor = self.choosenColor
+            vc.localizedLanguage = self.localizedLanguage
             self.navigationController?.pushViewController(vc, animated: true)
         }else if(indexPath.section == 3 && indexPath.row == 1){
             let storyboard = UIStoryboard(name: "Storyboard", bundle: nil)

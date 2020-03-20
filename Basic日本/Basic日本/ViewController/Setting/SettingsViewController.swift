@@ -66,6 +66,7 @@ class SettingsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = false
+        self.title = "Setting"
     }
 
     @IBAction func switchMyanmarLanguage(_ sender: Any) {

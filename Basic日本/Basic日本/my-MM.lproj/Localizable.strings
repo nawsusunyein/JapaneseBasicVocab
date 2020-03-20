@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  Basic日本
+
+  Created by techfun on 2020/03/20.
+  Copyright © 2020 Naw Su Su Nyein. All rights reserved.
+*/
+
+"lbl_number" = "နံပါတ်";
+"lbl_day_month" = "နေ့ / လ";
+"lbl_family" = "မိသားစု";
+"lbl_animal" = "တိရိစ္ဆာန်";
+"lbl_color" = "အရောင်";
+"lbl_fruits" = "သစ်သီး";
+"lbl_favorite" = "နှစ်သက်ခြင်း";

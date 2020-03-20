@@ -14,8 +14,9 @@ class VocabListViewController: UIViewController {
    
     public var category : String!
     
-    private var choosenLanguage : String?
-    private var choosenColor : String?
+    public var choosenLanguage : String?
+    public var choosenColor : String?
+    public var localizedLanguage : String?
     
     private var vocabDb : DataBaseCreation = DataBaseCreation()
     private var vocabList : [VocabularyModel]?
@@ -23,11 +24,6 @@ class VocabListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getVocabList()
-        
-        let defaults = UserDefaults.standard
-        self.choosenLanguage = defaults.string(forKey: "Lang")
-        self.choosenColor = defaults.string(forKey: "Color")
-        
         self.setBackgroundColor()
         
         vocabTable.register(UINib(nibName: "VocabListTableViewCell", bundle: nil), forCellReuseIdentifier: "VocabListTableViewCell")
@@ -37,6 +33,21 @@ class VocabListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = false
+        if(self.category == "1"){
+            self.title = "lbl_number".localized(self.localizedLanguage!)
+        }else if(self.category == "2"){
+            self.title = "lbl_day_month".localized(self.localizedLanguage!)
+        }else if(self.category == "3"){
+            self.title = "lbl_family".localized(self.localizedLanguage!)
+        }else if(self.category == "4"){
+            self.title = "lbl_animal".localized(self.localizedLanguage!)
+        }else if(self.category == "5"){
+            self.title = "lbl_color".localized(self.localizedLanguage!)
+        }else if(self.category == "6"){
+            self.title = "lbl_fruits".localized(self.localizedLanguage!)
+        }else if(self.category == "7"){
+            self.title = "lbl_favorite".localized(self.localizedLanguage!)
+        }
     }
 
     private func setBackgroundColor(){
