@@ -141,4 +141,22 @@ extension DataBaseCreation{
         //sqlite3_finalize(self.readEntryStmt);
         return vocabularyList
     }
+    
+    func setFavoriteVocab(favoriteStatementString : String) -> Int{
+        var updateSts : Int = 0
+        if sqlite3_prepare_v2(db,favoriteStatementString,-1,&updateEntryStmt,nil) == SQLITE_OK{
+            if sqlite3_step(updateEntryStmt) == SQLITE_DONE{
+                print("successfully update row")
+                updateSts = 1
+            }else{
+                updateSts = 0
+                print("could not update row")
+            }
+        }else{
+            updateSts = 0
+            print("update state should not be prepared")
+        }
+        sqlite3_finalize(updateEntryStmt)
+        return updateSts
+    }
 }

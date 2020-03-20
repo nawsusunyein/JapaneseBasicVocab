@@ -145,6 +145,7 @@ extension VocabListViewController : UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var selectedColor : UIColor?
         let cell = tableView.dequeueReusableCell(withIdentifier: "VocabListTableViewCell", for: indexPath) as! VocabListTableViewCell
         let vocabValue = self.vocabList![indexPath.row]
         
@@ -152,7 +153,7 @@ extension VocabListViewController : UITableViewDataSource,UITableViewDelegate{
         let tintVoiceImg = origVoiceImg?.withRenderingMode(.alwaysTemplate)
         cell.imgVoice.setImage(tintVoiceImg, for: .normal)
         
-        let origUnFavImg = UIImage(named: "unfavorite")
+        let origUnFavImg = UIImage(named: vocabValue.favFlag == "0" ? "unfavorite" : "favorite")
         let tintUnFavImg = origUnFavImg?.withRenderingMode(.alwaysTemplate)
         cell.imgFavorite.setImage(tintUnFavImg, for: .normal)
         
@@ -169,16 +170,34 @@ extension VocabListViewController : UITableViewDataSource,UITableViewDelegate{
         if(choosenColor == "1"){
             cell.imgVoice.tintColor = UIColor(red: 124/255, green: 179/255, blue: 66/255, alpha: 1.0)
             cell.imgFavorite.tintColor = UIColor(red: 124/255, green: 179/255, blue: 66/255, alpha: 1.0)
+            selectedColor = UIColor(red: 124/255, green: 179/255, blue: 66/255, alpha: 1.0)
         }else if(choosenColor == "2"){
             cell.imgVoice.tintColor = UIColor(red: 236/255, green: 64/255, blue: 122/255, alpha: 1.0)
             cell.imgFavorite.tintColor = UIColor(red: 236/255, green: 64/255, blue: 122/255, alpha: 1.0)
+            selectedColor = UIColor(red: 236/255, green: 64/255, blue: 122/255, alpha: 1.0)
         }else if(choosenColor == "3"){
             cell.imgVoice.tintColor = UIColor(red: 26/255, green: 35/255, blue: 126/255, alpha: 1.0)
             cell.imgFavorite.tintColor = UIColor(red: 26/255, green: 35/255, blue: 126/255, alpha: 1.0)
+            selectedColor = UIColor(red: 26/255, green: 35/255, blue: 126/255, alpha: 1.0)
         }
         
         cell.favButtonPressed = {
             print("here entered")
+            var favFlag : String?
+            if (vocabValue.favFlag == "1"){
+                favFlag = "0"
+            }else{
+                favFlag = "1"
+            }
+            let favoriteStatementString = "UPDATE Vocabularies SET FavFlag = '" + favFlag! + "' WHERE ID = \(vocabValue.id);"
+            let updateSts = self.vocabDb.setFavoriteVocab(favoriteStatementString: favoriteStatementString)
+            if(updateSts == 1){
+                vocabValue.favFlag = favFlag!
+                let origFavImg = UIImage(named: favFlag == "1" ? "favorite" : "unfavorite")
+                let tintFavImg = origFavImg?.withRenderingMode(.alwaysTemplate)
+                cell.imgFavorite.setImage(tintFavImg, for: .normal)
+                cell.imgFavorite.tintColor = selectedColor
+            }
         }
         return cell
     }

@@ -16,8 +16,7 @@ class DataBaseCreation{
     
     var insertEntryStmt : OpaquePointer?
     var readEntryStmt : OpaquePointer?
-    
-    
+    var updateEntryStmt : OpaquePointer?
     
     init(){
         do{
