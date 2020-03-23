@@ -23,6 +23,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var switchPinkColor: UISwitch!
     @IBOutlet weak var switchPurpleColor: UISwitch!
     
+    @IBOutlet weak var lblCurrentAppVer: UILabel!
+    
     private var choosenLanguage : String?
     private var choosenColor : String?
     private var defaults : UserDefaults?
@@ -60,6 +62,8 @@ class SettingsViewController: UIViewController {
             self.switchPinkColor.setOn(false, animated: false)
             self.switchGreenColor.setOn(false, animated: false)
         }
+        
+        self.setAppCurrentVersion()
         
     }
     
@@ -108,6 +112,12 @@ class SettingsViewController: UIViewController {
                 self.switchChinese.setOn(true, animated: false)
             })
         }
+    }
+    
+    private func setAppCurrentVersion(){
+        let dictionary = Bundle.main.infoDictionary
+        let version = dictionary!["CFBundleShortVersionString"] as! String
+        self.lblCurrentAppVer.text = version
     }
     
     private func showNoticeAlert(){
