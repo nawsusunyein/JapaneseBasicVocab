@@ -304,11 +304,20 @@
                                                     <constraint firstAttribute="height" constant="0.10000000000000001" id="kaE-vN-sGz"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QV1-vb-cSW">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="46"/>
+                                                <connections>
+                                                    <action selector="checkUpdateAvailable:" destination="F2t-Nz-g7f" eventType="touchUpInside" id="lBL-xM-tqq"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
+                                            <constraint firstItem="QV1-vb-cSW" firstAttribute="leading" secondItem="Ah4-ah-hCT" secondAttribute="leading" id="09C-Mu-vOT"/>
+                                            <constraint firstAttribute="trailing" secondItem="QV1-vb-cSW" secondAttribute="trailing" id="4xR-xP-DCy"/>
                                             <constraint firstItem="OyL-L3-qCF" firstAttribute="top" secondItem="Ah4-ah-hCT" secondAttribute="top" id="8UI-69-c7L"/>
                                             <constraint firstItem="qN8-TN-Mqq" firstAttribute="leading" secondItem="Ah4-ah-hCT" secondAttribute="leading" id="9VL-PN-0Hb"/>
+                                            <constraint firstAttribute="bottom" secondItem="QV1-vb-cSW" secondAttribute="bottom" id="ByL-EY-rrb"/>
                                             <constraint firstAttribute="trailing" secondItem="OyL-L3-qCF" secondAttribute="trailing" id="Ihm-cU-6Rj"/>
                                             <constraint firstItem="lnV-wG-1JW" firstAttribute="top" secondItem="Ah4-ah-hCT" secondAttribute="top" constant="8" id="MEV-Yv-N6x"/>
                                             <constraint firstItem="Pvt-KG-ZcP" firstAttribute="leading" secondItem="Ah4-ah-hCT" secondAttribute="leading" constant="8" id="dno-cH-qEA"/>
@@ -318,6 +327,7 @@
                                             <constraint firstAttribute="trailing" secondItem="qN8-TN-Mqq" secondAttribute="trailing" id="iEA-nj-fE7"/>
                                             <constraint firstItem="Pvt-KG-ZcP" firstAttribute="top" secondItem="Ah4-ah-hCT" secondAttribute="top" constant="8" id="mbA-DT-U3a"/>
                                             <constraint firstAttribute="bottom" secondItem="Pvt-KG-ZcP" secondAttribute="bottom" constant="8" id="seO-De-9uv"/>
+                                            <constraint firstItem="QV1-vb-cSW" firstAttribute="top" secondItem="Ah4-ah-hCT" secondAttribute="top" id="yXi-Ar-0G5"/>
                                             <constraint firstAttribute="trailing" secondItem="lnV-wG-1JW" secondAttribute="trailing" constant="8" id="zxt-sW-tuA"/>
                                         </constraints>
                                     </view>
