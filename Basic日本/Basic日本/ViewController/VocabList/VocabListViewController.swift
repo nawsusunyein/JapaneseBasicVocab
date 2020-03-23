@@ -83,10 +83,12 @@ class VocabListViewController: UIViewController {
     private func getVocabList(){
         var queryStatementString : String? = ""
         
-        if(category != nil && category != ""){
+        if(category != nil && category != "7"){
             queryStatementString = "Select * from Vocabularies where Category = '" + category + "';"
+        }else if(category == "7"){
+             queryStatementString = "Select * from Vocabularies where FavFlag = '1';"
         }else{
-            return
+           return
         }
        
         self.vocabList = vocabDb.readVocabList(queryStatementString: queryStatementString!)
@@ -104,6 +106,15 @@ class VocabListViewController: UIViewController {
         }else{
             print("no category")
         }
+    }
+    
+    private func showAddedOrRemoveFavoriteMsg(message : String){
+        let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        let _ = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: {_ in
+            self.dismiss(animated: true, completion: nil)
+        })
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     private func insertNumberVocabList(){
@@ -223,11 +234,23 @@ extension VocabListViewController : UITableViewDataSource,UITableViewDelegate{
             let favoriteStatementString = "UPDATE Vocabularies SET FavFlag = '" + favFlag! + "' WHERE ID = \(vocabValue.id);"
             let updateSts = self.vocabDb.setFavoriteVocab(favoriteStatementString: favoriteStatementString)
             if(updateSts == 1){
-                vocabValue.favFlag = favFlag!
-                let origFavImg = UIImage(named: favFlag == "1" ? "favorite" : "unfavorite")
-                let tintFavImg = origFavImg?.withRenderingMode(.alwaysTemplate)
-                cell.imgFavorite.setImage(tintFavImg, for: .normal)
-                cell.imgFavorite.tintColor = selectedColor
+                if(self.category == "7"){
+                    self.vocabList?.remove(at: indexPath.row)
+                    self.vocabTable.reloadData()
+                    self.showAddedOrRemoveFavoriteMsg(message : "\(vocabValue.jpVocab) is removed from favorite items")
+                }else{
+                    vocabValue.favFlag = favFlag!
+                    let origFavImg = UIImage(named: favFlag == "1" ? "favorite" : "unfavorite")
+                    let tintFavImg = origFavImg?.withRenderingMode(.alwaysTemplate)
+                    cell.imgFavorite.setImage(tintFavImg, for: .normal)
+                    cell.imgFavorite.tintColor = selectedColor
+                    if(favFlag == "1"){
+                        self.showAddedOrRemoveFavoriteMsg(message: "\(vocabValue.jpVocab) is added as favorite item")
+                    }else{
+                        self.showAddedOrRemoveFavoriteMsg(message: "\(vocabValue.jpVocab) is removed from favorite items")
+                    }
+                }
+                
             }
         }
         
