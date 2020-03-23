@@ -10,6 +10,10 @@
 		23490F612428785D0093ADC7 /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 23490F602428785D0093ADC7 /* test.mp3 */; };
 		23490F62242878E00093ADC7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23490A49242876690093ADC7 /* AVFoundation.framework */; };
 		23490FA92428A6D40093ADC7 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23490FA82428A6D40093ADC7 /* Reachability.swift */; };
+		23490FAC2428B5D10093ADC7 /* CharacterList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23490FAB2428B5D10093ADC7 /* CharacterList.storyboard */; };
+		23490FAE2428B5FB0093ADC7 /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23490FAD2428B5FB0093ADC7 /* CharacterListViewController.swift */; };
+		23490FB22428B6D30093ADC7 /* CharacterListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23490FB02428B6D30093ADC7 /* CharacterListCollectionViewCell.swift */; };
+		23490FB32428B6D30093ADC7 /* CharacterListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23490FB12428B6D30093ADC7 /* CharacterListCollectionViewCell.xib */; };
 		23D4EB8624235A6F00A0B96A /* UIDeviceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4EB8524235A6F00A0B96A /* UIDeviceExt.swift */; };
 		23D5AACA24249C63000412C0 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D5AAC924249C63000412C0 /* StringExtension.swift */; };
 		23D5AACD24249D93000412C0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23D5AACF24249D93000412C0 /* Localizable.strings */; };
@@ -56,6 +60,10 @@
 		23490A49242876690093ADC7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		23490F602428785D0093ADC7 /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = test.mp3; path = ../../../../../../../../Downloads/test.mp3; sourceTree = "<group>"; };
 		23490FA82428A6D40093ADC7 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		23490FAB2428B5D10093ADC7 /* CharacterList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CharacterList.storyboard; sourceTree = "<group>"; };
+		23490FAD2428B5FB0093ADC7 /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
+		23490FB02428B6D30093ADC7 /* CharacterListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListCollectionViewCell.swift; sourceTree = "<group>"; };
+		23490FB12428B6D30093ADC7 /* CharacterListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterListCollectionViewCell.xib; sourceTree = "<group>"; };
 		23D4EB8524235A6F00A0B96A /* UIDeviceExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExt.swift; sourceTree = "<group>"; };
 		23D5AAC924249C63000412C0 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		23D5AACE24249D93000412C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -139,6 +147,25 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		23490FAA2428B5990093ADC7 /* CharacterList */ = {
+			isa = PBXGroup;
+			children = (
+				23490FAF2428B6AE0093ADC7 /* CharacterListCollectionViewCell */,
+				23490FAB2428B5D10093ADC7 /* CharacterList.storyboard */,
+				23490FAD2428B5FB0093ADC7 /* CharacterListViewController.swift */,
+			);
+			path = CharacterList;
+			sourceTree = "<group>";
+		};
+		23490FAF2428B6AE0093ADC7 /* CharacterListCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				23490FB02428B6D30093ADC7 /* CharacterListCollectionViewCell.swift */,
+				23490FB12428B6D30093ADC7 /* CharacterListCollectionViewCell.xib */,
+			);
+			path = CharacterListCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		23D4EB8424235A4300A0B96A /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +196,7 @@
 		6A633E4523F7A51A005F8D09 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				23490FAA2428B5990093ADC7 /* CharacterList */,
 				6A633E5323F7F4EA005F8D09 /* Setting */,
 				6A633E4623F7A52D005F8D09 /* VocabList */,
 				6AB071D423E8541600962DF6 /* HomeScreen */,
@@ -400,9 +428,11 @@
 				23490F612428785D0093ADC7 /* test.mp3 in Resources */,
 				6A633E4823F7A552005F8D09 /* VocabListStoryBoard.storyboard in Resources */,
 				6AB071AC23E7D79300962DF6 /* Main.storyboard in Resources */,
+				23490FB32428B6D30093ADC7 /* CharacterListCollectionViewCell.xib in Resources */,
 				6AB071D823E8543E00962DF6 /* HomeCollectionViewCell.xib in Resources */,
 				23D5AACD24249D93000412C0 /* Localizable.strings in Resources */,
 				6A633E5723F7F544005F8D09 /* Storyboard.storyboard in Resources */,
+				23490FAC2428B5D10093ADC7 /* CharacterList.storyboard in Resources */,
 				6A633E4F23F7C3ED005F8D09 /* VocabListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +458,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23490FB22428B6D30093ADC7 /* CharacterListCollectionViewCell.swift in Sources */,
 				23490FA92428A6D40093ADC7 /* Reachability.swift in Sources */,
 				6AB071A923E7D79300962DF6 /* ViewController.swift in Sources */,
 				6A55D9E523F3DBC5006B3265 /* VocabularyOperations.swift in Sources */,
@@ -435,6 +466,7 @@
 				6A55D9E323F3D928006B3265 /* VocabularyModel.swift in Sources */,
 				6AB071A523E7D79300962DF6 /* AppDelegate.swift in Sources */,
 				6AB071D723E8543E00962DF6 /* HomeCollectionViewCell.swift in Sources */,
+				23490FAE2428B5FB0093ADC7 /* CharacterListViewController.swift in Sources */,
 				6A55D9E123F3BE27006B3265 /* SqliteError.swift in Sources */,
 				6A633E4A23F7A61C005F8D09 /* VocabListViewController.swift in Sources */,
 				6A55D9DF23F3B9A7006B3265 /* DataBaseCreation.swift in Sources */,

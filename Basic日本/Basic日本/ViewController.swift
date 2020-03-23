@@ -85,7 +85,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     // Collection View Methods
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 4
+        return 5
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 2
@@ -98,8 +98,15 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         print("index path cell \(indexPath.row)")
         print("collection view section :\(indexPath.section)")
         choosenColor = self.defaults?.string(forKey: "Color")
-        
         if indexPath.section == 0{
+            if(indexPath.row == 0){
+                cell.menuIcon.image = UIImage(named: "book")
+                cell.menuLabel.text = "Word Chart"
+            }else{
+                cell.menuIcon.image = UIImage(named: "book")
+                cell.menuLabel.text = "Word Chart"
+            }
+        }else if indexPath.section == 1{
             if(indexPath.row == 0){
                 cell.menuIcon.image = UIImage(named: "number")
                 cell.menuLabel.text = "lbl_number".localized(self.localizedLanguage!)
@@ -107,7 +114,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
                 cell.menuIcon.image = UIImage(named: "day")
                 cell.menuLabel.text = "lbl_day_month".localized(self.localizedLanguage!)
             }
-        }else if indexPath.section == 1{
+        }else if indexPath.section == 2{
             if(indexPath.row == 0){
                 cell.menuIcon.image = UIImage(named: "family")
                 cell.menuLabel.text = "lbl_family".localized(self.localizedLanguage!)
@@ -115,7 +122,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
                 cell.menuIcon.image = UIImage(named: "animals")
                 cell.menuLabel.text = "lbl_animal".localized(self.localizedLanguage!)
             }
-        }else if indexPath.section == 2{
+        }else if indexPath.section == 3{
             if(indexPath.row == 0){
                 cell.menuIcon.image = UIImage(named: "color")
                 cell.menuLabel.text = "lbl_color".localized(self.localizedLanguage!)
@@ -123,7 +130,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
                 cell.menuIcon.image = UIImage(named: "fruit")
                 cell.menuLabel.text = "lbl_fruits".localized(self.localizedLanguage!)
             }
-        }else if indexPath.section == 3{
+        }else if indexPath.section == 4{
             if(indexPath.row == 0){
                 cell.menuIcon.image = UIImage(named: "favorite")
                 cell.menuLabel.text = "lbl_favorite".localized(self.localizedLanguage!)
@@ -151,8 +158,12 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("index row : \(indexPath.row)")
-        
-        if(indexPath.section == 0 || indexPath.section == 1 || indexPath.section == 2 || (indexPath.section == 3 && indexPath.row == 0)){
+        if(indexPath.section == 0){
+            let storyboard = UIStoryboard(name: "CharacterList", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "CharacterListViewController") as! CharacterListViewController
+            vc.choosenColor = self.choosenColor
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else if(indexPath.section == 1 || indexPath.section == 2 || indexPath.section == 3 || (indexPath.section == 4 && indexPath.row == 0)){
             let storyboard = UIStoryboard(name: "VocabListStoryBoard", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "VocabListViewController") as! VocabListViewController
             if(indexPath.section == 0 && indexPath.row == 0){
@@ -174,7 +185,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             vc.choosenColor = self.choosenColor
             vc.localizedLanguage = self.localizedLanguage
             self.navigationController?.pushViewController(vc, animated: true)
-        }else if(indexPath.section == 3 && indexPath.row == 1){
+        }else if(indexPath.section == 4 && indexPath.row == 1){
             let storyboard = UIStoryboard(name: "Storyboard", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
             self.navigationController?.pushViewController(vc, animated: true)

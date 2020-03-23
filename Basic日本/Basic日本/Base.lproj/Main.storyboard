@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GiF-OC-K4V">
-                                <rect key="frame" x="16" y="112" width="382" height="742"/>
+                                <rect key="frame" x="0.0" y="112" width="414" height="742"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="nRL-og-ncj">
                                     <size key="itemSize" width="150" height="120"/>
@@ -31,9 +31,9 @@
                         <color key="backgroundColor" red="0.48627450980392156" green="0.70196078431372544" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="GiF-OC-K4V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KhQ-wD-fqJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GiF-OC-K4V" secondAttribute="trailing" constant="16" id="Y7y-nP-kgc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GiF-OC-K4V" secondAttribute="trailing" id="Y7y-nP-kgc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GiF-OC-K4V" secondAttribute="bottom" constant="8" id="kjS-5r-jdy"/>
-                            <constraint firstItem="GiF-OC-K4V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="oYy-cj-tGY"/>
+                            <constraint firstItem="GiF-OC-K4V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oYy-cj-tGY"/>
                             <constraint firstItem="GiF-OC-K4V" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="vTI-Yx-oeI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
