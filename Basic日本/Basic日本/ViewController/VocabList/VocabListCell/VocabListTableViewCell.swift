@@ -18,6 +18,8 @@ class VocabListTableViewCell: UITableViewCell {
     @IBOutlet weak var imgFavorite: UIButton!
     
     public var favButtonPressed : (() -> ()) = {}
+    public var playVoiceButtonPressed : (() -> ()) = {}
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -32,6 +34,10 @@ class VocabListTableViewCell: UITableViewCell {
     
     @IBAction func pressFavButton(_ sender: Any) {
         favButtonPressed()
+    }
+    
+    @IBAction func pressVoiceButton(_ sender: Any) {
+        playVoiceButtonPressed()
     }
     
 }

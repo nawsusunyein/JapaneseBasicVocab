@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class VocabListViewController: UIViewController {
 
@@ -18,6 +19,7 @@ class VocabListViewController: UIViewController {
     public var choosenColor : String?
     public var localizedLanguage : String?
     
+    private var vocabAudioPlayer : AVAudioPlayer?
     private var vocabDb : DataBaseCreation = DataBaseCreation()
     private var vocabList : [VocabularyModel]?
     
@@ -62,6 +64,20 @@ class VocabListViewController: UIViewController {
         }else if(choosenColor == "3"){
             self.vocabTable.backgroundColor = UIColor(red: 26/255, green: 35/255, blue: 126/255, alpha: 1.0)
         }
+    }
+    
+    private func playVocabAudioFile(fileName : String, fileExtension : String){
+        
+        do{
+            if let audioFilePath = Bundle.main.path(forResource: fileName, ofType: fileExtension){
+                vocabAudioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioFilePath))
+            }else{
+                print("No file with specified name exists")
+            }
+        }catch let error{
+            print("audio file playing error : \(error.localizedDescription)")
+        }
+        vocabAudioPlayer?.play()
     }
     
     private func getVocabList(){
@@ -214,6 +230,11 @@ extension VocabListViewController : UITableViewDataSource,UITableViewDelegate{
                 cell.imgFavorite.tintColor = selectedColor
             }
         }
+        
+        cell.playVoiceButtonPressed = {
+            self.playVocabAudioFile(fileName: "test",fileExtension: "mp3")
+        }
+        
         return cell
     }
     

@@ -38,6 +38,9 @@
                                     <constraint firstAttribute="width" constant="30" id="Xkl-64-TjA"/>
                                     <constraint firstAttribute="height" constant="30" id="bjC-VQ-jHi"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="pressVoiceButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="2KG-eS-w39"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FU3-Cd-uaY">
                                 <rect key="frame" x="294" y="42" width="30" height="30"/>
