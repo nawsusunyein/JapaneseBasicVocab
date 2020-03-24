@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class VocabListViewController: UIViewController {
+class VocabListViewController: UIViewController, AVAudioPlayerDelegate{
 
     @IBOutlet weak var vocabTable: UITableView!
    
@@ -70,6 +70,16 @@ class VocabListViewController: UIViewController {
         
         do{
             if let audioFilePath = Bundle.main.path(forResource: fileName, ofType: fileExtension){
+                do {
+                    //keep alive audio at background
+                    try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+                } catch _ {
+                }
+                do {
+                    try AVAudioSession.sharedInstance().setActive(true)
+                } catch _ {
+                }
+                UIApplication.shared.beginReceivingRemoteControlEvents()
                 vocabAudioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioFilePath))
             }else{
                 print("No file with specified name exists")
@@ -77,6 +87,8 @@ class VocabListViewController: UIViewController {
         }catch let error{
             print("audio file playing error : \(error.localizedDescription)")
         }
+        vocabAudioPlayer?.delegate = self
+        vocabAudioPlayer?.prepareToPlay()
         vocabAudioPlayer?.play()
     }
     
@@ -255,7 +267,7 @@ extension VocabListViewController : UITableViewDataSource,UITableViewDelegate{
         }
         
         cell.playVoiceButtonPressed = {
-            self.playVocabAudioFile(fileName: "test",fileExtension: "mp3")
+            self.playVocabAudioFile(fileName: "leaving_sound",fileExtension: "mp3")
         }
         
         return cell
