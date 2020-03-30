@@ -23,6 +23,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var switchPinkColor: UISwitch!
     @IBOutlet weak var switchPurpleColor: UISwitch!
     
+    @IBOutlet weak var lblCurrentAppVer: UILabel!
+    
     private var choosenLanguage : String?
     private var choosenColor : String?
     private var defaults : UserDefaults?
@@ -62,6 +64,8 @@ class SettingsViewController: UIViewController {
             self.switchPinkColor.setOn(false, animated: false)
             self.switchGreenColor.setOn(false, animated: false)
         }
+        
+        self.setAppCurrentVersion()
         
     }
     
@@ -115,6 +119,12 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    private func setAppCurrentVersion(){
+        let dictionary = Bundle.main.infoDictionary
+        let version = dictionary!["CFBundleShortVersionString"] as! String
+        self.lblCurrentAppVer.text = version
+    }
+    
     private func showNoticeAlert(){
         let alertController = UIAlertController(title: "", message: "You need to choose at lease one language", preferredStyle: .alert)
         let okButton = UIAlertAction(title: "OK", style: .default, handler: {_ in})
@@ -163,5 +173,57 @@ class SettingsViewController: UIViewController {
             })
         }
     }
+    @IBAction func checkUpdateAvailable(_ sender: Any) {
+        let infoDictionary = Bundle.main.infoDictionary
+        let appID = infoDictionary!["CFBundleIdentifier"]
+        let appStoreUrl = URL(string: "http://itunes.apple.com/lookup?bundleId=\(String(describing: appID))")
+        guard let data = try? Data(contentsOf: appStoreUrl!) else{
+            print("there is an error")
+            return
+        }
+        
+        let lookup = (try? JSONSerialization.jsonObject(with: data , options: [])) as? [String: Any]
+        if let resultCount = lookup!["resultCount"] as? Int, resultCount == 1 {
+            if let results = lookup!["results"] as? [[String:Any]] {
+                if let appStoreVersion = results[0]["version"] as? String{
+                    let currentVersion = infoDictionary!["CFBundleShortVersionString"] as? String
+                    if !(appStoreVersion == currentVersion) {
+                        self.showUpdateAlert()
+                    }
+                }
+            }
+        }
+    }
     
+    private func showUpdateAlert(){
+        let updateAlertController = UIAlertController(title: "", message: "There is new version available.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Update", style: .default, handler: {_ in
+            self.goToURL(urlString: "https://www.google.com")
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {_ in })
+        updateAlertController.addAction(okAction)
+        updateAlertController.addAction(cancelAction)
+        self.present(updateAlertController, animated: true, completion: nil)
+    }
+    
+    private func goToURL(urlString : String){
+        if let goURL = URL(string: urlString), UIApplication.shared.canOpenURL(goURL){
+            UIApplication.shared.open(goURL, options: [:], completionHandler: {_ in})
+        }
+    }
+    
+    private func openNetworkAlert(){
+        let networkAlertController = UIAlertController(title: "", message: "No Network\nPlease open your network data or Wi-Fi", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: {_ in
+            
+        })
+        networkAlertController.addAction(okAction)
+        self.present(networkAlertController, animated: true, completion: nil)
+    }
+    
+    private func checkNetwork(){
+        if !Reachability.isConnectedToNetwork(){
+            self.openNetworkAlert()
+        }
+    }
 }

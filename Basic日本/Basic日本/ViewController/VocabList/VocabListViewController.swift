@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import AVFoundation
 
-class VocabListViewController: UIViewController {
+class VocabListViewController: UIViewController, AVAudioPlayerDelegate{
 
     @IBOutlet weak var vocabTable: UITableView!
    
@@ -18,6 +19,7 @@ class VocabListViewController: UIViewController {
     public var choosenColor : String?
     public var localizedLanguage : String?
     
+    private var vocabAudioPlayer : AVAudioPlayer?
     private var vocabDb : DataBaseCreation = DataBaseCreation()
     private var vocabList : [VocabularyModel]?
     
@@ -70,13 +72,41 @@ class VocabListViewController: UIViewController {
         }
     }
     
+    private func playVocabAudioFile(fileName : String, fileExtension : String){
+        
+        do{
+            if let audioFilePath = Bundle.main.path(forResource: fileName, ofType: fileExtension){
+                do {
+                    //keep alive audio at background
+                    try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+                } catch _ {
+                }
+                do {
+                    try AVAudioSession.sharedInstance().setActive(true)
+                } catch _ {
+                }
+                UIApplication.shared.beginReceivingRemoteControlEvents()
+                vocabAudioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioFilePath))
+            }else{
+                print("No file with specified name exists")
+            }
+        }catch let error{
+            print("audio file playing error : \(error.localizedDescription)")
+        }
+        vocabAudioPlayer?.delegate = self
+        vocabAudioPlayer?.prepareToPlay()
+        vocabAudioPlayer?.play()
+    }
+    
     private func getVocabList(){
         var queryStatementString : String? = ""
         
-        if(category != nil && category != ""){
+        if(category != nil && category != "7"){
             queryStatementString = "Select * from Vocabularies where Category = '" + category + "';"
+        }else if(category == "7"){
+             queryStatementString = "Select * from Vocabularies where FavFlag = '1';"
         }else{
-            return
+           return
         }
        
         self.vocabList = vocabDb.readVocabList(queryStatementString: queryStatementString!)
@@ -94,6 +124,15 @@ class VocabListViewController: UIViewController {
         }else{
             print("no category")
         }
+    }
+    
+    private func showAddedOrRemoveFavoriteMsg(message : String){
+        let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        let _ = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: {_ in
+            self.dismiss(animated: true, completion: nil)
+        })
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     private func insertNumberVocabList(){
@@ -213,13 +252,30 @@ extension VocabListViewController : UITableViewDataSource,UITableViewDelegate{
             let favoriteStatementString = "UPDATE Vocabularies SET FavFlag = '" + favFlag! + "' WHERE ID = \(vocabValue.id);"
             let updateSts = self.vocabDb.setFavoriteVocab(favoriteStatementString: favoriteStatementString)
             if(updateSts == 1){
-                vocabValue.favFlag = favFlag!
-                let origFavImg = UIImage(named: favFlag == "1" ? "favorite" : "unfavorite")
-                let tintFavImg = origFavImg?.withRenderingMode(.alwaysTemplate)
-                cell.imgFavorite.setImage(tintFavImg, for: .normal)
-                cell.imgFavorite.tintColor = selectedColor
+                if(self.category == "7"){
+                    self.vocabList?.remove(at: indexPath.row)
+                    self.vocabTable.reloadData()
+                    self.showAddedOrRemoveFavoriteMsg(message : "\(vocabValue.jpVocab) is removed from favorite items")
+                }else{
+                    vocabValue.favFlag = favFlag!
+                    let origFavImg = UIImage(named: favFlag == "1" ? "favorite" : "unfavorite")
+                    let tintFavImg = origFavImg?.withRenderingMode(.alwaysTemplate)
+                    cell.imgFavorite.setImage(tintFavImg, for: .normal)
+                    cell.imgFavorite.tintColor = selectedColor
+                    if(favFlag == "1"){
+                        self.showAddedOrRemoveFavoriteMsg(message: "\(vocabValue.jpVocab) is added as favorite item")
+                    }else{
+                        self.showAddedOrRemoveFavoriteMsg(message: "\(vocabValue.jpVocab) is removed from favorite items")
+                    }
+                }
+                
             }
         }
+        
+        cell.playVoiceButtonPressed = {
+            self.playVocabAudioFile(fileName: "leaving_sound",fileExtension: "mp3")
+        }
+        
         return cell
     }
     
