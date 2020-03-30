@@ -16,10 +16,16 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     private var choosenColor : String?
     private var defaults : UserDefaults?
     private var localizedLanguage : String?
+    private var setChosenColor : UIColor?
    
+    private var notificationCenter : NotificationCenter?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.defaults = UserDefaults.standard
+        
+        notificationCenter = NotificationCenter.default
+        notificationCenter?.addObserver(self, selector: #selector(setBackButtonByChosenLanguage(notification:)), name: Notification.Name("ChangeLanguage"), object: nil)
+        notificationCenter?.addObserver(self, selector: #selector(setBackButtonColorByChosenColor(notification: )), name: NSNotification.Name("ChangeColor"), object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -28,11 +34,39 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         self.setChosenLanguage(finish: {_ in
             self.setLanguageToLoadLocalizableFile()
         })
-        self.setChosenColor()
-        self.setBackgroundColor()
+    
+        self.setChosenColor(finish: {_ in
+            self.setBackgroundColor()
+        })
+        
+        self.setBackButtonColor()
         self.setCollectionViewDelegate()
         self.registerCollectionViewCell()
         self.homeCollectionView.reloadData()
+    }
+    
+    @objc private func setBackButtonByChosenLanguage(notification:NSNotification){
+        print("set back button by chosen language")
+        if let language = notification.userInfo!["lang"] as? String{
+            self.localizedLanguage = language
+            self.setBackButtonColor()
+        }
+    }
+    
+    @objc private func setBackButtonColorByChosenColor(notification:NSNotification){
+        if let color = notification.userInfo!["color"] as? String{
+            if color == "1"{
+                self.setChosenColor = UIColor(red: 124/255, green: 179/255, blue: 66/255, alpha: 1.0)
+            }else if color == "2"{
+                self.setChosenColor = UIColor(red: 236/255, green: 64/255, blue: 122/255, alpha: 1.0)
+            }else if color == "3"{
+                self.setChosenColor = UIColor(red: 26/255, green: 35/255, blue: 126/255, alpha: 1.0)
+            }
+            DispatchQueue.main.async {
+                self.setBackBarItemColor(colorNum: "1")
+            }
+            
+        }
     }
     
     private func setChosenLanguage(finish : (_ success : Bool) -> Void){
@@ -44,12 +78,13 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         finish(true)
     }
     
-    private func setChosenColor(){
+    private func setChosenColor(finish:(_ success : Bool) -> Void){
        choosenColor = self.defaults!.string(forKey: "Color")
        if(choosenColor == nil){
             self.defaults?.set("1",forKey: "Color")
         self.choosenColor = "1"
         }
+        finish(true)
     }
     
     private func setLanguageToLoadLocalizableFile(){
@@ -66,11 +101,23 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         choosenColor = self.defaults?.string(forKey: "Color")
         if(choosenColor == "1"){
              self.view.backgroundColor = UIColor(red: 124/255, green: 179/255, blue: 66/255, alpha: 1.0)
+            self.setChosenColor = UIColor(red: 124/255, green: 179/255, blue: 66/255, alpha: 1.0)
         }else if(choosenColor == "2"){
             self.view.backgroundColor = UIColor(red: 236/255, green: 64/255, blue: 122/255, alpha: 1.0)
+            self.setChosenColor = UIColor(red: 236/255, green: 64/255, blue: 122/255, alpha: 1.0)
         }else if(choosenColor == "3"){
              self.view.backgroundColor = UIColor(red: 26/255, green: 35/255, blue: 126/255, alpha: 1.0)
+            self.setChosenColor = UIColor(red: 26/255, green: 35/255, blue: 126/255, alpha: 1.0)
         }
+    }
+    
+    private func setBackButtonColor(){
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "lbl_back".localized(self.localizedLanguage!), style: .plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem?.tintColor = self.setChosenColor
+    }
+    
+    private func setBackBarItemColor(colorNum : String){
+        self.navigationItem.backBarButtonItem?.tintColor = UIColor.red
     }
     
     func setCollectionViewDelegate(){

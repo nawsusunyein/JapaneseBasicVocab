@@ -27,12 +27,14 @@ class SettingsViewController: UIViewController {
     private var choosenColor : String?
     private var defaults : UserDefaults?
     
+    private var notificationCenter : NotificationCenter?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.defaults = UserDefaults.standard
         choosenLanguage = defaults!.string(forKey: "Lang")
         choosenColor = defaults!.string(forKey: "Color")
-        
+        notificationCenter = NotificationCenter.default
         if(choosenLanguage == "mm"){
             self.switchMyanmar.setOn(true, animated: false)
             self.switchEnglish.setOn(false, animated: false)
@@ -74,12 +76,13 @@ class SettingsViewController: UIViewController {
             self.switchEnglish.setOn(false, animated: false)
             self.switchChinese.setOn(false, animated: false)
             self.defaults?.set("mm", forKey: "Lang")
+            
+            self.notificationCenter!.post(name: NSNotification.Name(rawValue: "ChangeLanguage"), object: nil, userInfo: ["lang" : "my-MM"])
         }else if(!self.switchEnglish.isOn && !self.switchChinese.isOn){
             self.showNoticeAlert()
             Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: {_ in
                 self.switchMyanmar.setOn(true, animated: false)
             })
-            
         }
     }
     
@@ -89,6 +92,7 @@ class SettingsViewController: UIViewController {
             self.switchMyanmar.setOn(false, animated: false)
             self.switchChinese.setOn(false, animated: false)
             self.defaults?.set("en", forKey: "Lang")
+            self.notificationCenter!.post(name: NSNotification.Name(rawValue: "ChangeLanguage"), object: nil, userInfo: ["lang" : "en"])
         }else if(!self.switchMyanmar.isOn && !self.switchChinese.isOn){
             self.showNoticeAlert()
             Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: {_ in
@@ -102,6 +106,7 @@ class SettingsViewController: UIViewController {
             self.switchEnglish.setOn(false, animated: false)
             self.switchMyanmar.setOn(false, animated: false)
             self.defaults?.set("cn", forKey: "Lang")
+            self.notificationCenter!.post(name: NSNotification.Name(rawValue: "ChangeLanguage"), object: nil, userInfo: ["lang" : "zh-Hans"])
         }else if(!self.switchEnglish.isOn && !self.switchMyanmar.isOn){
             self.showNoticeAlert()
             Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: {_ in
@@ -122,6 +127,7 @@ class SettingsViewController: UIViewController {
             self.switchPinkColor.setOn(false, animated: false)
             self.switchPurpleColor.setOn(false, animated: false)
             self.defaults?.set("1", forKey: "Color")
+            notificationCenter?.post(name: NSNotification.Name("ChangeColor"), object: nil, userInfo: ["color" : "1"])
         }else if(!self.switchPurpleColor.isOn && !self.switchPinkColor.isOn){
             self.showNoticeAlert()
             Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: {_ in
@@ -135,6 +141,7 @@ class SettingsViewController: UIViewController {
             self.switchGreenColor.setOn(false, animated: false)
             self.switchPurpleColor.setOn(false, animated: false)
             self.defaults?.set("2", forKey: "Color")
+            notificationCenter?.post(name: NSNotification.Name("ChangeColor"), object: nil, userInfo: ["color" : "2"])
         }else if(!self.switchPurpleColor.isOn && !self.switchGreenColor.isOn){
             self.showNoticeAlert()
             Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: {_ in
@@ -148,6 +155,7 @@ class SettingsViewController: UIViewController {
             self.switchPinkColor.setOn(false, animated: false)
             self.switchGreenColor.setOn(false, animated: false)
             self.defaults?.set("3", forKey: "Color")
+            notificationCenter?.post(name: NSNotification.Name("ChangeColor"), object: nil, userInfo: ["color" : "3"])
         }else if(!self.switchGreenColor.isOn && !self.switchPinkColor.isOn){
             self.showNoticeAlert()
             Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: {_ in

@@ -21,12 +21,16 @@ class VocabListViewController: UIViewController {
     private var vocabDb : DataBaseCreation = DataBaseCreation()
     private var vocabList : [VocabularyModel]?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getVocabList()
         self.setBackgroundColor()
         
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+        
         vocabTable.register(UINib(nibName: "VocabListTableViewCell", bundle: nil), forCellReuseIdentifier: "VocabListTableViewCell")
+        
         
     }
     
@@ -36,6 +40,8 @@ class VocabListViewController: UIViewController {
         self.setTitleForScreen()
     }
 
+    
+    
     private func setTitleForScreen(){
        if(self.category == "1"){
             self.title = "lbl_number".localized(self.localizedLanguage!)
