@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23490F612428785D0093ADC7 /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 23490F602428785D0093ADC7 /* test.mp3 */; };
 		23490F62242878E00093ADC7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23490A49242876690093ADC7 /* AVFoundation.framework */; };
 		23490FA92428A6D40093ADC7 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23490FA82428A6D40093ADC7 /* Reachability.swift */; };
-		236638852429A5D100B30541 /* leaving_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 236638842429A5D100B30541 /* leaving_sound.mp3 */; };
 		23D4EB8624235A6F00A0B96A /* UIDeviceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4EB8524235A6F00A0B96A /* UIDeviceExt.swift */; };
 		23D5AACA24249C63000412C0 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D5AAC924249C63000412C0 /* StringExtension.swift */; };
 		23D5AACD24249D93000412C0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23D5AACF24249D93000412C0 /* Localizable.strings */; };
@@ -25,6 +23,11 @@
 		6A633E5223F7D456005F8D09 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A633E5123F7D456005F8D09 /* AppConstants.swift */; };
 		6A633E5523F7F50C005F8D09 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A633E5423F7F50C005F8D09 /* SettingsViewController.swift */; };
 		6A633E5723F7F544005F8D09 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A633E5623F7F544005F8D09 /* Storyboard.storyboard */; };
+		6AA7140524322C22004EE01F /* NumNi.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6AA7140424322C22004EE01F /* NumNi.m4a */; };
+		6AA7140724322C2E004EE01F /* NumIchi.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6AA7140624322C2E004EE01F /* NumIchi.m4a */; };
+		6AA7140924322C39004EE01F /* NumSan.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6AA7140824322C39004EE01F /* NumSan.m4a */; };
+		6AA7140B24322C45004EE01F /* NumYon.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6AA7140A24322C45004EE01F /* NumYon.m4a */; };
+		6AA7140D24322C4F004EE01F /* NumGo.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6AA7140C24322C4F004EE01F /* NumGo.m4a */; };
 		6AB071A523E7D79300962DF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB071A423E7D79300962DF6 /* AppDelegate.swift */; };
 		6AB071A923E7D79300962DF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB071A823E7D79300962DF6 /* ViewController.swift */; };
 		6AB071AC23E7D79300962DF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AB071AA23E7D79300962DF6 /* Main.storyboard */; };
@@ -55,9 +58,7 @@
 
 /* Begin PBXFileReference section */
 		23490A49242876690093ADC7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		23490F602428785D0093ADC7 /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = test.mp3; path = ../../../../../../../../Downloads/test.mp3; sourceTree = "<group>"; };
 		23490FA82428A6D40093ADC7 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		236638842429A5D100B30541 /* leaving_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = leaving_sound.mp3; path = ../../../../../../AudioFile/leaving_sound.mp3; sourceTree = "<group>"; };
 		23D4EB8524235A6F00A0B96A /* UIDeviceExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExt.swift; sourceTree = "<group>"; };
 		23D5AAC924249C63000412C0 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		23D5AACE24249D93000412C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -74,6 +75,11 @@
 		6A633E5123F7D456005F8D09 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		6A633E5423F7F50C005F8D09 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		6A633E5623F7F544005F8D09 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		6AA7140424322C22004EE01F /* NumNi.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = NumNi.m4a; path = ../../../../Downloads/NumNi.m4a; sourceTree = "<group>"; };
+		6AA7140624322C2E004EE01F /* NumIchi.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = NumIchi.m4a; path = ../../../../Downloads/NumIchi.m4a; sourceTree = "<group>"; };
+		6AA7140824322C39004EE01F /* NumSan.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = NumSan.m4a; path = ../../../../Downloads/NumSan.m4a; sourceTree = "<group>"; };
+		6AA7140A24322C45004EE01F /* NumYon.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = NumYon.m4a; path = ../../../../Downloads/NumYon.m4a; sourceTree = "<group>"; };
+		6AA7140C24322C4F004EE01F /* NumGo.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = NumGo.m4a; path = ../../../../Downloads/NumGo.m4a; sourceTree = "<group>"; };
 		6AB071A123E7D79300962DF6 /* Basic日本.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Basic日本.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AB071A423E7D79300962DF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AB071A823E7D79300962DF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,15 +123,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		23490A4324286F900093ADC7 /* VocabAudio */ = {
-			isa = PBXGroup;
-			children = (
-				236638842429A5D100B30541 /* leaving_sound.mp3 */,
-				23490F602428785D0093ADC7 /* test.mp3 */,
-			);
-			path = VocabAudio;
-			sourceTree = "<group>";
-		};
 		23490A48242876680093ADC7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +212,18 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		6AA7140324322C15004EE01F /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				6AA7140C24322C4F004EE01F /* NumGo.m4a */,
+				6AA7140A24322C45004EE01F /* NumYon.m4a */,
+				6AA7140424322C22004EE01F /* NumNi.m4a */,
+				6AA7140624322C2E004EE01F /* NumIchi.m4a */,
+				6AA7140824322C39004EE01F /* NumSan.m4a */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		6AB0719823E7D79300962DF6 = {
 			isa = PBXGroup;
 			children = (
@@ -239,8 +248,8 @@
 		6AB071A323E7D79300962DF6 /* Basic日本 */ = {
 			isa = PBXGroup;
 			children = (
+				6AA7140324322C15004EE01F /* Audio */,
 				23490FA72428A6B90093ADC7 /* Common */,
-				23490A4324286F900093ADC7 /* VocabAudio */,
 				23D4EB8424235A4300A0B96A /* Extension */,
 				6A633E5023F7D43D005F8D09 /* Constants */,
 				6A633E4523F7A51A005F8D09 /* ViewController */,
@@ -400,13 +409,16 @@
 			files = (
 				6AB071B123E7D79A00962DF6 /* LaunchScreen.storyboard in Resources */,
 				6AB071AE23E7D79A00962DF6 /* Assets.xcassets in Resources */,
-				23490F612428785D0093ADC7 /* test.mp3 in Resources */,
 				6A633E4823F7A552005F8D09 /* VocabListStoryBoard.storyboard in Resources */,
 				6AB071AC23E7D79300962DF6 /* Main.storyboard in Resources */,
-				236638852429A5D100B30541 /* leaving_sound.mp3 in Resources */,
+				6AA7140B24322C45004EE01F /* NumYon.m4a in Resources */,
 				6AB071D823E8543E00962DF6 /* HomeCollectionViewCell.xib in Resources */,
 				23D5AACD24249D93000412C0 /* Localizable.strings in Resources */,
+				6AA7140924322C39004EE01F /* NumSan.m4a in Resources */,
+				6AA7140724322C2E004EE01F /* NumIchi.m4a in Resources */,
 				6A633E5723F7F544005F8D09 /* Storyboard.storyboard in Resources */,
+				6AA7140524322C22004EE01F /* NumNi.m4a in Resources */,
+				6AA7140D24322C4F004EE01F /* NumGo.m4a in Resources */,
 				6A633E4F23F7C3ED005F8D09 /* VocabListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -561,7 +573,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -616,7 +628,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
