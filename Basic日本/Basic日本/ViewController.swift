@@ -148,7 +148,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         
         if indexPath.section == 0{
             if(indexPath.row == 0){
-                cell.menuIcon.image = UIImage(named: "number")
+                cell.menuIcon.image = UIImage(named: "Number")
                 cell.menuLabel.text = "lbl_number".localized(self.localizedLanguage!)
             }else{
                 cell.menuIcon.image = UIImage(named: "day")
