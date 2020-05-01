@@ -72,32 +72,6 @@ class VocabListViewController: UIViewController, AVAudioPlayerDelegate{
         }
     }
     
-    private func playVocabAudioFile(fileName : String, fileExtension : String){
-        
-        do{
-            if let audioFilePath = Bundle.main.path(forResource: fileName, ofType: fileExtension){
-                do {
-                    //keep alive audio at background
-                    try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-                } catch _ {
-                }
-                do {
-                    try AVAudioSession.sharedInstance().setActive(true)
-                } catch _ {
-                }
-                UIApplication.shared.beginReceivingRemoteControlEvents()
-                vocabAudioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioFilePath))
-            }else{
-                print("No file with specified name exists")
-            }
-        }catch let error{
-            print("audio file playing error : \(error.localizedDescription)")
-        }
-        vocabAudioPlayer?.delegate = self
-        vocabAudioPlayer?.prepareToPlay()
-        vocabAudioPlayer?.play()
-    }
-    
     private func getVocabList(){
         var queryStatementString : String? = ""
         
@@ -508,11 +482,6 @@ extension VocabListViewController : UITableViewDataSource,UITableViewDelegate{
         var selectedColor : UIColor?
         let cell = tableView.dequeueReusableCell(withIdentifier: "VocabListTableViewCell", for: indexPath) as! VocabListTableViewCell
         let vocabValue = self.vocabList![indexPath.row]
-        
-        let origVoiceImg = UIImage(named: "voice")
-        let tintVoiceImg = origVoiceImg?.withRenderingMode(.alwaysTemplate)
-        cell.imgVoice.setImage(tintVoiceImg, for: .normal)
-        
         let origUnFavImg = UIImage(named: vocabValue.favFlag == "0" ? "unfavorite" : "favorite")
         let tintUnFavImg = origUnFavImg?.withRenderingMode(.alwaysTemplate)
         cell.imgFavorite.setImage(tintUnFavImg, for: .normal)
@@ -528,21 +497,18 @@ extension VocabListViewController : UITableViewDataSource,UITableViewDelegate{
         }
         
         if(choosenColor == "1"){
-            cell.imgVoice.tintColor = UIColor(red: 124/255, green: 179/255, blue: 66/255, alpha: 1.0)
             cell.imgFavorite.tintColor = UIColor(red: 124/255, green: 179/255, blue: 66/255, alpha: 1.0)
             selectedColor = UIColor(red: 124/255, green: 179/255, blue: 66/255, alpha: 1.0)
         }else if(choosenColor == "2"){
-            cell.imgVoice.tintColor = UIColor(red: 236/255, green: 64/255, blue: 122/255, alpha: 1.0)
+            
             cell.imgFavorite.tintColor = UIColor(red: 236/255, green: 64/255, blue: 122/255, alpha: 1.0)
             selectedColor = UIColor(red: 236/255, green: 64/255, blue: 122/255, alpha: 1.0)
         }else if(choosenColor == "3"){
-            cell.imgVoice.tintColor = UIColor(red: 26/255, green: 35/255, blue: 126/255, alpha: 1.0)
             cell.imgFavorite.tintColor = UIColor(red: 26/255, green: 35/255, blue: 126/255, alpha: 1.0)
             selectedColor = UIColor(red: 26/255, green: 35/255, blue: 126/255, alpha: 1.0)
         }
         
         cell.favButtonPressed = {
-            print("here entered")
             var favFlag : String?
             if (vocabValue.favFlag == "1"){
                 favFlag = "0"
@@ -570,10 +536,6 @@ extension VocabListViewController : UITableViewDataSource,UITableViewDelegate{
                 }
                 
             }
-        }
-        
-        cell.playVoiceButtonPressed = {
-            self.playVocabAudioFile(fileName: vocabValue.audioFileName,fileExtension: "m4a")
         }
         
         return cell

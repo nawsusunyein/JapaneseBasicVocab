@@ -14,11 +14,10 @@ class VocabListTableViewCell: UITableViewCell {
     @IBOutlet weak var lblRomaWord: UILabel!
     @IBOutlet weak var lblMeaningWord: UILabel!
     @IBOutlet weak var vocabCard: UIView!
-    @IBOutlet weak var imgVoice: UIButton!
     @IBOutlet weak var imgFavorite: UIButton!
     
     public var favButtonPressed : (() -> ()) = {}
-    public var playVoiceButtonPressed : (() -> ()) = {}
+   
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,8 +35,6 @@ class VocabListTableViewCell: UITableViewCell {
         favButtonPressed()
     }
     
-    @IBAction func pressVoiceButton(_ sender: Any) {
-        playVoiceButtonPressed()
-    }
+   
     
 }

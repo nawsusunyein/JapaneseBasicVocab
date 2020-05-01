@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,18 +32,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4FE-3o-i3w">
-                                <rect key="frame" x="294" y="8" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="Xkl-64-TjA"/>
-                                    <constraint firstAttribute="height" constant="30" id="bjC-VQ-jHi"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="pressVoiceButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="2KG-eS-w39"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FU3-Cd-uaY">
-                                <rect key="frame" x="294" y="42" width="30" height="30"/>
+                                <rect key="frame" x="294" y="25" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="HDD-If-MkT"/>
                                     <constraint firstAttribute="height" constant="30" id="o6M-W7-ah2"/>
@@ -61,17 +51,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="4FE-3o-i3w" firstAttribute="top" secondItem="aek-PZ-BkK" secondAttribute="top" constant="8" id="9KW-LU-njA"/>
                             <constraint firstItem="BOi-Ne-yp7" firstAttribute="leading" secondItem="aek-PZ-BkK" secondAttribute="leading" constant="8" id="9Qm-6P-WZA"/>
-                            <constraint firstItem="FU3-Cd-uaY" firstAttribute="top" secondItem="4FE-3o-i3w" secondAttribute="bottom" constant="4" id="JkF-Qb-U1R"/>
                             <constraint firstAttribute="trailing" secondItem="FU3-Cd-uaY" secondAttribute="trailing" constant="8" id="MO9-Tw-2jf"/>
                             <constraint firstItem="K0B-dh-1Bb" firstAttribute="leading" secondItem="aek-PZ-BkK" secondAttribute="leading" constant="8" id="Rgm-aT-pxC"/>
                             <constraint firstAttribute="bottom" secondItem="BOi-Ne-yp7" secondAttribute="bottom" constant="8" id="SSe-T0-JYf"/>
-                            <constraint firstAttribute="trailing" secondItem="4FE-3o-i3w" secondAttribute="trailing" constant="8" id="Uec-XO-eX2"/>
                             <constraint firstItem="paW-wN-Ynk" firstAttribute="top" secondItem="aek-PZ-BkK" secondAttribute="top" constant="8" id="bP8-jw-cIA"/>
                             <constraint firstAttribute="height" constant="80" id="dTH-mF-4To"/>
                             <constraint firstItem="K0B-dh-1Bb" firstAttribute="top" secondItem="aek-PZ-BkK" secondAttribute="top" constant="8" id="hGz-fd-szZ"/>
-                            <constraint firstAttribute="bottom" secondItem="FU3-Cd-uaY" secondAttribute="bottom" constant="8" id="hzk-Dd-NhZ"/>
+                            <constraint firstItem="FU3-Cd-uaY" firstAttribute="centerY" secondItem="aek-PZ-BkK" secondAttribute="centerY" id="tyi-cP-nuq"/>
                             <constraint firstItem="paW-wN-Ynk" firstAttribute="leading" secondItem="K0B-dh-1Bb" secondAttribute="trailing" constant="16" id="xaj-AS-t80"/>
                         </constraints>
                     </view>
@@ -88,7 +75,6 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="imgFavorite" destination="FU3-Cd-uaY" id="3aU-fA-gQ4"/>
-                <outlet property="imgVoice" destination="4FE-3o-i3w" id="Tvn-D0-xjU"/>
                 <outlet property="lblJpWord" destination="K0B-dh-1Bb" id="rxe-UK-Jaf"/>
                 <outlet property="lblMeaningWord" destination="BOi-Ne-yp7" id="dp7-T6-Ept"/>
                 <outlet property="lblRomaWord" destination="paW-wN-Ynk" id="K8T-Nx-GDh"/>
