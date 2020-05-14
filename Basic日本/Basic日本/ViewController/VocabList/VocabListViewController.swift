@@ -23,7 +23,6 @@ class VocabListViewController: UIViewController, AVAudioPlayerDelegate{
     private var vocabDb : DataBaseCreation = DataBaseCreation()
     private var vocabList : [VocabularyModel]?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getVocabList()
@@ -129,23 +128,23 @@ class VocabListViewController: UIViewController, AVAudioPlayerDelegate{
         let vocabNumberMod9 = VocabularyModel(id: 9, category: "1", jpVocab: "きゅう", romaPronounce: "kyuu", enVocab: "nine", mmVocab: "ကိုး", cnVocab: "九", favFlag: "0", audioFileName: "NumKyuu")
         let vocabNumberMod10 = VocabularyModel(id: 10, category: "1", jpVocab: "じゅう", romaPronounce: "jyuu", enVocab: "ten", mmVocab: "တစ်ဆယ်", cnVocab: "十", favFlag: "0", audioFileName: "NumJyuu")
         let vocabNumberMod11 = VocabularyModel(id: 11, category: "1", jpVocab: "じゅういち", romaPronounce: "jyuuichi", enVocab: "eleven", mmVocab: "တစ်ဆယ့်တစ်", cnVocab: "十一", favFlag: "0", audioFileName: "NumJyuuIchi")
-         let vocabNumberMod12 = VocabularyModel(id: 12, category: "1", jpVocab: "じゅうに", romaPronounce: "jyuuni", enVocab: "eleven", mmVocab: "တစ်ဆယ့်နှစ်", cnVocab: "十二", favFlag: "0", audioFileName: "NumJyuuNi")
-         let vocabNumberMod13 = VocabularyModel(id: 13, category: "1", jpVocab: "じゅうさん", romaPronounce: "jyuusan", enVocab: "eleven", mmVocab: "တစ်ဆယ့်သုံး", cnVocab: "十三", favFlag: "0", audioFileName: "NumJyuuSan")
-         let vocabNumberMod14 = VocabularyModel(id: 14, category: "1", jpVocab: "じゅうよん", romaPronounce: "jyuuyon", enVocab: "eleven", mmVocab: "တစ်ဆယ့်လေး", cnVocab: "十四", favFlag: "0", audioFileName: "NumJyuuYon")
-         let vocabNumberMod15 = VocabularyModel(id: 15, category: "1", jpVocab: "じゅうご", romaPronounce: "jyuugo", enVocab: "eleven", mmVocab: "တစ်ဆယ့်ငါး", cnVocab: "十五", favFlag: "0", audioFileName: "NumJyuuGo")
-         let vocabNumberMod16 = VocabularyModel(id: 16, category: "1", jpVocab: "じゅうろく", romaPronounce: "jyuuroku", enVocab: "eleven", mmVocab: "တစ်ဆယ့်ခြောက်", cnVocab: "十六", favFlag: "0", audioFileName: "NumJyuuRoku")
-         let vocabNumberMod17 = VocabularyModel(id: 17, category: "1", jpVocab: "じゅうなな", romaPronounce: "jyuunana", enVocab: "eleven", mmVocab: "တစ်ဆယ့်ခုနှစ်", cnVocab: "十七", favFlag: "0", audioFileName: "NumJyuuNana")
-         let vocabNumberMod18 = VocabularyModel(id: 18, category: "1", jpVocab: "じゅうはち", romaPronounce: "jyuuhachi", enVocab: "eleven", mmVocab: "တစ်ဆယ့်ရှစ်", cnVocab: "十八", favFlag: "0", audioFileName: "NumJyuuHachi")
-         let vocabNumberMod19 = VocabularyModel(id: 19, category: "1", jpVocab: "じゅうきゅう", romaPronounce: "jyuukyuu", enVocab: "eleven", mmVocab: "တစ်ဆယ့်ကိုး", cnVocab: "十九", favFlag: "0", audioFileName: "NumJyuuKyuu")
-         let vocabNumberMod20 = VocabularyModel(id: 20, category: "1", jpVocab: "にじゅう", romaPronounce: "nijuu", enVocab: "eleven", mmVocab: "နှစ်ဆယ်", cnVocab: "二十", favFlag: "0", audioFileName: "NumNiJyuu")
-          let vocabNumberMod21 = VocabularyModel(id: 21, category: "1", jpVocab: "さんじゅう", romaPronounce: "sanjuu", enVocab: "eleven", mmVocab: "သုံးဆယ်", cnVocab: "三十", favFlag: "0", audioFileName: "NumSanJyuu")
-          let vocabNumberMod22 = VocabularyModel(id: 22, category: "1", jpVocab: "よんじゅう", romaPronounce: "yonjuu", enVocab: "eleven", mmVocab: "လေးဆယ်", cnVocab: "四十", favFlag: "0", audioFileName: "NumYonJyuu")
-          let vocabNumberMod23 = VocabularyModel(id: 23, category: "1", jpVocab: "ごじゅう", romaPronounce: "gojuu", enVocab: "eleven", mmVocab: "ငါးဆယ်", cnVocab: "五十", favFlag: "0", audioFileName: "NumGoJyuu")
-           let vocabNumberMod24 = VocabularyModel(id: 24, category: "1", jpVocab: "ろくじゅう", romaPronounce: "rokujuu", enVocab: "eleven", mmVocab: "ခြောက်ဆယ်", cnVocab: "六十", favFlag: "0", audioFileName: "NumRokuJyuu")
-          let vocabNumberMod25 = VocabularyModel(id: 25, category: "1", jpVocab: "ななじゅう", romaPronounce: "nanajuu", enVocab: "eleven", mmVocab: "ခုနှစ်ဆယ်", cnVocab: "七十", favFlag: "0", audioFileName: "NumNanaJyuu")
-          let vocabNumberMod26 = VocabularyModel(id: 26, category: "1", jpVocab: "はちじゅう", romaPronounce: "hachijuu", enVocab: "eleven", mmVocab: "ရှစ်ဆယ်", cnVocab: "八十", favFlag: "0", audioFileName: "NumHachiJyuu")
-        let vocabNumberMod27 = VocabularyModel(id: 27, category: "1", jpVocab: "きゅうじゅう", romaPronounce: "kyuujuu", enVocab: "eleven", mmVocab: "ကိုးဆယ်", cnVocab: "九十", favFlag: "0", audioFileName: "NumKyuuJyuu")
-        let vocabNumberMod28 = VocabularyModel(id: 28, category: "1", jpVocab: "ひゃく", romaPronounce: "hyaku", enVocab: "eleven", mmVocab: "တစ်ရာ", cnVocab: "百", favFlag: "0", audioFileName: "NumHyaku")
+         let vocabNumberMod12 = VocabularyModel(id: 12, category: "1", jpVocab: "じゅうに", romaPronounce: "jyuuni", enVocab: "twelve", mmVocab: "တစ်ဆယ့်နှစ်", cnVocab: "十二", favFlag: "0", audioFileName: "NumJyuuNi")
+         let vocabNumberMod13 = VocabularyModel(id: 13, category: "1", jpVocab: "じゅうさん", romaPronounce: "jyuusan", enVocab: "thirteen", mmVocab: "တစ်ဆယ့်သုံး", cnVocab: "十三", favFlag: "0", audioFileName: "NumJyuuSan")
+         let vocabNumberMod14 = VocabularyModel(id: 14, category: "1", jpVocab: "じゅうよん", romaPronounce: "jyuuyon", enVocab: "fourteen", mmVocab: "တစ်ဆယ့်လေး", cnVocab: "十四", favFlag: "0", audioFileName: "NumJyuuYon")
+         let vocabNumberMod15 = VocabularyModel(id: 15, category: "1", jpVocab: "じゅうご", romaPronounce: "jyuugo", enVocab: "fifteen", mmVocab: "တစ်ဆယ့်ငါး", cnVocab: "十五", favFlag: "0", audioFileName: "NumJyuuGo")
+         let vocabNumberMod16 = VocabularyModel(id: 16, category: "1", jpVocab: "じゅうろく", romaPronounce: "jyuuroku", enVocab: "sixteen", mmVocab: "တစ်ဆယ့်ခြောက်", cnVocab: "十六", favFlag: "0", audioFileName: "NumJyuuRoku")
+         let vocabNumberMod17 = VocabularyModel(id: 17, category: "1", jpVocab: "じゅうなな", romaPronounce: "jyuunana", enVocab: "seventeen", mmVocab: "တစ်ဆယ့်ခုနှစ်", cnVocab: "十七", favFlag: "0", audioFileName: "NumJyuuNana")
+         let vocabNumberMod18 = VocabularyModel(id: 18, category: "1", jpVocab: "じゅうはち", romaPronounce: "jyuuhachi", enVocab: "eighteen", mmVocab: "တစ်ဆယ့်ရှစ်", cnVocab: "十八", favFlag: "0", audioFileName: "NumJyuuHachi")
+         let vocabNumberMod19 = VocabularyModel(id: 19, category: "1", jpVocab: "じゅうきゅう", romaPronounce: "jyuukyuu", enVocab: "nineteen", mmVocab: "တစ်ဆယ့်ကိုး", cnVocab: "十九", favFlag: "0", audioFileName: "NumJyuuKyuu")
+         let vocabNumberMod20 = VocabularyModel(id: 20, category: "1", jpVocab: "にじゅう", romaPronounce: "nijuu", enVocab: "twenty", mmVocab: "နှစ်ဆယ်", cnVocab: "二十", favFlag: "0", audioFileName: "NumNiJyuu")
+          let vocabNumberMod21 = VocabularyModel(id: 21, category: "1", jpVocab: "さんじゅう", romaPronounce: "sanjuu", enVocab: "thirty", mmVocab: "သုံးဆယ်", cnVocab: "三十", favFlag: "0", audioFileName: "NumSanJyuu")
+          let vocabNumberMod22 = VocabularyModel(id: 22, category: "1", jpVocab: "よんじゅう", romaPronounce: "yonjuu", enVocab: "forty", mmVocab: "လေးဆယ်", cnVocab: "四十", favFlag: "0", audioFileName: "NumYonJyuu")
+          let vocabNumberMod23 = VocabularyModel(id: 23, category: "1", jpVocab: "ごじゅう", romaPronounce: "gojuu", enVocab: "fifty", mmVocab: "ငါးဆယ်", cnVocab: "五十", favFlag: "0", audioFileName: "NumGoJyuu")
+           let vocabNumberMod24 = VocabularyModel(id: 24, category: "1", jpVocab: "ろくじゅう", romaPronounce: "rokujuu", enVocab: "sixty", mmVocab: "ခြောက်ဆယ်", cnVocab: "六十", favFlag: "0", audioFileName: "NumRokuJyuu")
+          let vocabNumberMod25 = VocabularyModel(id: 25, category: "1", jpVocab: "ななじゅう", romaPronounce: "nanajuu", enVocab: "seventy", mmVocab: "ခုနှစ်ဆယ်", cnVocab: "七十", favFlag: "0", audioFileName: "NumNanaJyuu")
+          let vocabNumberMod26 = VocabularyModel(id: 26, category: "1", jpVocab: "はちじゅう", romaPronounce: "hachijuu", enVocab: "eighty", mmVocab: "ရှစ်ဆယ်", cnVocab: "八十", favFlag: "0", audioFileName: "NumHachiJyuu")
+        let vocabNumberMod27 = VocabularyModel(id: 27, category: "1", jpVocab: "きゅうじゅう", romaPronounce: "kyuujuu", enVocab: "ninety", mmVocab: "ကိုးဆယ်", cnVocab: "九十", favFlag: "0", audioFileName: "NumKyuuJyuu")
+        let vocabNumberMod28 = VocabularyModel(id: 28, category: "1", jpVocab: "ひゃく", romaPronounce: "hyaku", enVocab: "one hundred", mmVocab: "တစ်ရာ", cnVocab: "百", favFlag: "0", audioFileName: "NumHyaku")
     
         
         self.vocabList?.append(vocabNumberMod1)
@@ -170,13 +169,6 @@ class VocabListViewController: UIViewController, AVAudioPlayerDelegate{
         self.vocabList?.append(vocabNumberMod20)
         self.vocabList?.append(vocabNumberMod21)
         self.vocabList?.append(vocabNumberMod22)
-        self.vocabList?.append(vocabNumberMod16)
-        self.vocabList?.append(vocabNumberMod17)
-        self.vocabList?.append(vocabNumberMod18)
-        self.vocabList?.append(vocabNumberMod19)
-        self.vocabList?.append(vocabNumberMod20)
-        self.vocabList?.append(vocabNumberMod21)
-        self.vocabList?.append(vocabNumberMod22)
         self.vocabList?.append(vocabNumberMod23)
         self.vocabList?.append(vocabNumberMod24)
         self.vocabList?.append(vocabNumberMod25)
@@ -194,12 +186,12 @@ class VocabListViewController: UIViewController, AVAudioPlayerDelegate{
         let vocabNumberMod2 = VocabularyModel(id: 30, category: "4", jpVocab: "いぬ", romaPronounce: "inu", enVocab: "dog", mmVocab: "ခွေး", cnVocab: "狗", favFlag: "0", audioFileName: "AniDog")
                let vocabNumberMod3 = VocabularyModel(id: 31, category: "4", jpVocab: "とり", romaPronounce: "tori", enVocab: "bird", mmVocab: "ငှက်", cnVocab: "鸟", favFlag: "0", audioFileName: "AniBird")
                let vocabNumberMod4 = VocabularyModel(id: 32, category: "4", jpVocab: "さる", romaPronounce: "saru", enVocab: "monkey", mmVocab: "မျောက်", cnVocab: "猴子", favFlag: "0", audioFileName: "AniSaru")
-               let vocabNumberMod5 = VocabularyModel(id: 33, category: "4", jpVocab: "しし", romaPronounce: "shishi", enVocab: "shishi", mmVocab: "ခြင်္သေ့", cnVocab: "狮子", favFlag: "0", audioFileName: "AniShi")
+               let vocabNumberMod5 = VocabularyModel(id: 33, category: "4", jpVocab: "しし", romaPronounce: "shishi", enVocab: "lion", mmVocab: "ခြင်္သေ့", cnVocab: "狮子", favFlag: "0", audioFileName: "AniShi")
                let vocabNumberMod6 = VocabularyModel(id: 34, category: "4", jpVocab: "さかな", romaPronounce: "sakana", enVocab: "fish", mmVocab: "ငါး", cnVocab: "鱼", favFlag: "0", audioFileName: "AniSakana")
                let vocabNumberMod7 = VocabularyModel(id: 35, category: "4", jpVocab: "むし", romaPronounce: "mushi", enVocab: "insect", mmVocab: "ပိုးမွှား", cnVocab: "虫子", favFlag: "0", audioFileName: "AniMushi")
                let vocabNumberMod8 = VocabularyModel(id: 36, category: "4", jpVocab: "かわうそ", romaPronounce: "kawauso", enVocab: "otter", mmVocab: "ဖျံ", cnVocab: "獭", favFlag: "0", audioFileName: "AniKawauso")
                let vocabNumberMod9 = VocabularyModel(id: 37, category: "4", jpVocab: "うし", romaPronounce: "ushi", enVocab: "cow", mmVocab: "နွား", cnVocab: "牛", favFlag: "0", audioFileName: "AniUshi")
-               let vocabNumberMod10 = VocabularyModel(id: 38, category: "4", jpVocab: "长颈鹿", romaPronounce: "kirin", enVocab: "giraffe", mmVocab: "သစ်ကုလားအုတ်", cnVocab: "十", favFlag: "0", audioFileName: "AniKiri")
+               let vocabNumberMod10 = VocabularyModel(id: 38, category: "4", jpVocab: "きりん", romaPronounce: "kirin", enVocab: "giraffe", mmVocab: "သစ်ကုလားအုတ်", cnVocab: "长颈鹿", favFlag: "0", audioFileName: "AniKiri")
                let vocabNumberMod11 = VocabularyModel(id: 39, category: "4", jpVocab: "とら", romaPronounce: "tora", enVocab: "tiger", mmVocab: "ကျား", cnVocab: "老虎", favFlag: "0", audioFileName: "AniTora")
         
                self.vocabList?.append(vocabNumberMod1)
@@ -270,23 +262,23 @@ class VocabListViewController: UIViewController, AVAudioPlayerDelegate{
     }
     
     func insertDayMonth(){
-        let vocabNumberMod1 = VocabularyModel(id: 60, category: "2", jpVocab: "げつようび", romaPronounce: "getsuyoubi", enVocab: "monday", mmVocab: "တနင်္လာနေ့", cnVocab: "星期一", favFlag: "0", audioFileName: "CalMonday")
-        let vocabNumberMod2 = VocabularyModel(id: 61, category: "2", jpVocab: "かようび", romaPronounce: "kayoubi", enVocab: "tuesday", mmVocab: "အင်္ဂါနေ့", cnVocab: "星期二", favFlag: "0", audioFileName: "CalTuesday")
-               let vocabNumberMod3 = VocabularyModel(id: 62, category: "2", jpVocab: "すいようび", romaPronounce: "suiyoubi", enVocab: "wednesday", mmVocab: "ဗုဒ္ဓဟူးနေ့", cnVocab: "星期三", favFlag: "0", audioFileName: "CalWednesday")
-               let vocabNumberMod4 = VocabularyModel(id: 63, category: "2", jpVocab: "もくようび", romaPronounce: "mokuyoubi", enVocab: "thursday", mmVocab: "ကြာသပတေးနေ့", cnVocab: "星期四", favFlag: "0", audioFileName: "CalThursday")
-               let vocabNumberMod5 = VocabularyModel(id: 64, category: "2", jpVocab: "きんようび", romaPronounce: "kinyoubi", enVocab: "friday", mmVocab: "သောကြာနေ့", cnVocab: "星期五", favFlag: "0", audioFileName: "CalFriday")
-               let vocabNumberMod6 = VocabularyModel(id: 65, category: "2", jpVocab: "どようび", romaPronounce: "doyoubi", enVocab: "saturday", mmVocab: "စနေနေ့", cnVocab: "星期六", favFlag: "0", audioFileName: "CalSaturday")
-               let vocabNumberMod7 = VocabularyModel(id: 66, category: "2", jpVocab: "にちようび", romaPronounce: "nichiyoubi", enVocab: "sunday", mmVocab: "တနင်္ဂနွေနေ့", cnVocab: "星期天", favFlag: "0", audioFileName: "CalSunday")
+        let vocabNumberMod1 = VocabularyModel(id: 60, category: "2", jpVocab: "げつようび", romaPronounce: "getsuyoubi", enVocab: "Monday", mmVocab: "တနင်္လာနေ့", cnVocab: "星期一", favFlag: "0", audioFileName: "CalMonday")
+        let vocabNumberMod2 = VocabularyModel(id: 61, category: "2", jpVocab: "かようび", romaPronounce: "kayoubi", enVocab: "Tuesday", mmVocab: "အင်္ဂါနေ့", cnVocab: "星期二", favFlag: "0", audioFileName: "CalTuesday")
+               let vocabNumberMod3 = VocabularyModel(id: 62, category: "2", jpVocab: "すいようび", romaPronounce: "suiyoubi", enVocab: "Wednesday", mmVocab: "ဗုဒ္ဓဟူးနေ့", cnVocab: "星期三", favFlag: "0", audioFileName: "CalWednesday")
+               let vocabNumberMod4 = VocabularyModel(id: 63, category: "2", jpVocab: "もくようび", romaPronounce: "mokuyoubi", enVocab: "Thursday", mmVocab: "ကြာသပတေးနေ့", cnVocab: "星期四", favFlag: "0", audioFileName: "CalThursday")
+               let vocabNumberMod5 = VocabularyModel(id: 64, category: "2", jpVocab: "きんようび", romaPronounce: "kinyoubi", enVocab: "Friday", mmVocab: "သောကြာနေ့", cnVocab: "星期五", favFlag: "0", audioFileName: "CalFriday")
+               let vocabNumberMod6 = VocabularyModel(id: 65, category: "2", jpVocab: "どようび", romaPronounce: "doyoubi", enVocab: "Saturday", mmVocab: "စနေနေ့", cnVocab: "星期六", favFlag: "0", audioFileName: "CalSaturday")
+               let vocabNumberMod7 = VocabularyModel(id: 66, category: "2", jpVocab: "にちようび", romaPronounce: "nichiyoubi", enVocab: "Sunday", mmVocab: "တနင်္ဂနွေနေ့", cnVocab: "星期天", favFlag: "0", audioFileName: "CalSunday")
                let vocabNumberMod8 = VocabularyModel(id: 67, category: "2", jpVocab: "いちがつ", romaPronounce: "ichigatsu", enVocab: "January", mmVocab: "ဇန်နဝါရီ", cnVocab: "一月", favFlag: "0", audioFileName: "CalJan")
-               let vocabNumberMod9 = VocabularyModel(id: 68, category: "2", jpVocab: "にがつ", romaPronounce: "nigatsu", enVocab: "february", mmVocab: "ဖေဖော်ဝါရီ", cnVocab: "二月", favFlag: "0", audioFileName: "CalFeb")
-               let vocabNumberMod10 = VocabularyModel(id: 69, category: "2", jpVocab: "さんがつ", romaPronounce: "sangatsu", enVocab: "march", mmVocab: "မတ်", cnVocab: "三月", favFlag: "0", audioFileName: "CalMar")
+               let vocabNumberMod9 = VocabularyModel(id: 68, category: "2", jpVocab: "にがつ", romaPronounce: "nigatsu", enVocab: "February", mmVocab: "ဖေဖော်ဝါရီ", cnVocab: "二月", favFlag: "0", audioFileName: "CalFeb")
+               let vocabNumberMod10 = VocabularyModel(id: 69, category: "2", jpVocab: "さんがつ", romaPronounce: "sangatsu", enVocab: "March", mmVocab: "မတ်", cnVocab: "三月", favFlag: "0", audioFileName: "CalMar")
          let vocabNumberMod11 = VocabularyModel(id: 70, category: "2", jpVocab: "しがつ", romaPronounce: "shigatsu", enVocab: "April", mmVocab: "ဧပြီ", cnVocab: "四月", favFlag: "0", audioFileName: "CalApr")
 
-         let vocabNumberMod12 = VocabularyModel(id: 71, category: "2", jpVocab: "ごがつ", romaPronounce: "gogatsu", enVocab: "may", mmVocab: "မေ", cnVocab: "五月", favFlag: "0", audioFileName: "CalMay")
+         let vocabNumberMod12 = VocabularyModel(id: 71, category: "2", jpVocab: "ごがつ", romaPronounce: "gogatsu", enVocab: "May", mmVocab: "မေ", cnVocab: "五月", favFlag: "0", audioFileName: "CalMay")
 
          let vocabNumberMod13 = VocabularyModel(id: 72, category: "2", jpVocab: "ろくがつ", romaPronounce: "rokugatsu", enVocab: "June", mmVocab: "ဇွန်", cnVocab: "六月", favFlag: "0", audioFileName: "CalJun")
          let vocabNumberMod14 = VocabularyModel(id: 73, category: "2", jpVocab: "しちがつ", romaPronounce: "shichigatsu", enVocab: "July", mmVocab: "ဇူလိုင်", cnVocab: "七月", favFlag: "0", audioFileName: "CalJul")
-         let vocabNumberMod15 = VocabularyModel(id: 74, category: "2", jpVocab: "はちがつ", romaPronounce: "hachigatsu", enVocab: "august", mmVocab: "သြဂုတ်", cnVocab: "八月", favFlag: "0", audioFileName: "CalAug")
+         let vocabNumberMod15 = VocabularyModel(id: 74, category: "2", jpVocab: "はちがつ", romaPronounce: "hachigatsu", enVocab: "August", mmVocab: "သြဂုတ်", cnVocab: "八月", favFlag: "0", audioFileName: "CalAug")
          let vocabNumberMod16 = VocabularyModel(id: 75, category: "2", jpVocab: "くがつ", romaPronounce: "kugatsu", enVocab: "September", mmVocab: "စက်တင်ဘာ", cnVocab: "九月", favFlag: "0", audioFileName: "CalSept")
          let vocabNumberMod17 = VocabularyModel(id: 76, category: "2", jpVocab: "じゅうがつ", romaPronounce: "juugatsu", enVocab: "October", mmVocab: "အောက်တိုဘာ", cnVocab: "十月", favFlag: "0", audioFileName: "CalOct")
          let vocabNumberMod18 = VocabularyModel(id: 77, category: "2", jpVocab: "じゅういちがつ", romaPronounce: "juuichigatsu", enVocab: "November", mmVocab: "နို၀င်ဘာ", cnVocab: "十一月", favFlag: "0", audioFileName: "CalNov")
@@ -303,7 +295,7 @@ class VocabListViewController: UIViewController, AVAudioPlayerDelegate{
          let vocabNumberMod29 = VocabularyModel(id: 88, category: "2", jpVocab: "とおか", romaPronounce: "tooka", enVocab: "10th day of month", mmVocab: "ဆယ်ရက်နေ့", cnVocab: "十日", favFlag: "0", audioFileName: "Cal10")
          let vocabNumberMod30 = VocabularyModel(id: 89, category: "2", jpVocab: "じゅういちにち", romaPronounce: "juuichinichi", enVocab: "11th day of month", mmVocab: "ဆယ့်တစ်ရက်နေ့", cnVocab: "十一日", favFlag: "0", audioFileName: "Cal11")
         let vocabNumberMod31 = VocabularyModel(id: 90, category: "2", jpVocab: "じゅうににち", romaPronounce: "juuninichi", enVocab: "12th day of month", mmVocab: "ဆယ့်နှစ်ရက်နေ့", cnVocab: "十二日", favFlag: "0", audioFileName: "Cal12")
-        let vocabNumberMod32 = VocabularyModel(id: 91, category: "2", jpVocab: "じゅうさんにち", romaPronounce: "juusannichi", enVocab: "13rd day of month", mmVocab: "ဆယ့်သုံးရက်နေ့", cnVocab: "十三日", favFlag: "0", audioFileName: "Cal13")
+        let vocabNumberMod32 = VocabularyModel(id: 91, category: "2", jpVocab: "じゅうさんにち", romaPronounce: "juusannichi", enVocab: "13th day of month", mmVocab: "ဆယ့်သုံးရက်နေ့", cnVocab: "十三日", favFlag: "0", audioFileName: "Cal13")
         let vocabNumberMod33 = VocabularyModel(id: 92, category: "2", jpVocab: "じゅうよっか", romaPronounce: "juuyokka", enVocab: "14th day of month", mmVocab: "ဆယ့်လေးရက်နေ့", cnVocab: "十四日", favFlag: "0", audioFileName: "Cal14")
         let vocabNumberMod34 = VocabularyModel(id:93, category: "2", jpVocab: "じゅうごにち", romaPronounce: "juugonichi", enVocab: "15th day of month", mmVocab: "ဆယ့်ငါးရက်နေ့", cnVocab: "十五日", favFlag: "0", audioFileName: "Cal15")
         let vocabNumberMod35 = VocabularyModel(id: 94, category: "2", jpVocab: "じゅうろくにち", romaPronounce: "juurokunichi", enVocab: "16th day of month", mmVocab: "ဆယ့်ခြောက်ရက်နေ့", cnVocab: "十六日", favFlag: "0", audioFileName: "Cal16")
@@ -312,7 +304,7 @@ class VocabListViewController: UIViewController, AVAudioPlayerDelegate{
         let vocabNumberMod38 = VocabularyModel(id: 97, category: "2", jpVocab: "じゅうくにち", romaPronounce: "juukunichi", enVocab: "19th day of month", mmVocab: "ဆယ့်ကိုးရက်နေ့", cnVocab: "十九日", favFlag: "0", audioFileName: "Cal19")
         let vocabNumberMod39 = VocabularyModel(id: 98, category: "2", jpVocab: "はつか", romaPronounce: "hatsuka", enVocab: "20th day of month", mmVocab: "နှစ်ဆယ်ရက်နေ့", cnVocab: "二十日", favFlag: "0", audioFileName: "Cal20")
         let vocabNumberMod40 = VocabularyModel(id: 99, category: "2", jpVocab: "にじゅういちにち", romaPronounce: "nijuuichinichi", enVocab: "21st day of month", mmVocab: "နှစ်ဆယ့်တစ်ရက်နေ့", cnVocab: "二十一日", favFlag: "0", audioFileName: "Cal21")
-         let vocabNumberMod41 = VocabularyModel(id: 100, category: "2", jpVocab: "にじゅうににち", romaPronounce: "nijuninichi", enVocab: "22th day of month", mmVocab: "နှစ်ဆယ့်နှစ်ရက်နေ့", cnVocab: "二十二日", favFlag: "0", audioFileName: "Cal22")
+         let vocabNumberMod41 = VocabularyModel(id: 100, category: "2", jpVocab: "にじゅうににち", romaPronounce: "nijuninichi", enVocab: "22nd day of month", mmVocab: "နှစ်ဆယ့်နှစ်ရက်နေ့", cnVocab: "二十二日", favFlag: "0", audioFileName: "Cal22")
          let vocabNumberMod42 = VocabularyModel(id: 101, category: "2", jpVocab: "にじゅうさんにち", romaPronounce: "nijuusannichi", enVocab: "23rd day of month", mmVocab: "နှစ်ဆယ့်သုံးရက်နေ့", cnVocab: "二十三日", favFlag: "0", audioFileName: "Cal23")
          let vocabNumberMod43 = VocabularyModel(id: 102, category: "2", jpVocab: "にじゅいよっか", romaPronounce: "nijuuyokka", enVocab: "24th day of month", mmVocab: "နှစ်ဆယ့်လေးရက်နေ့", cnVocab: "二十四日", favFlag: "0", audioFileName: "Cal24")
          let vocabNumberMod44 = VocabularyModel(id: 103, category: "2", jpVocab: "にじゅうごにち", romaPronounce: "nijuugonichi", enVocab: "25th day of month", mmVocab: "နှစ်ဆယ့်ငါးရက်နေ့", cnVocab: "二十五日", favFlag: "0", audioFileName: "Cal25")
@@ -322,13 +314,13 @@ class VocabListViewController: UIViewController, AVAudioPlayerDelegate{
          let vocabNumberMod48 = VocabularyModel(id: 107, category: "2", jpVocab: "にじゅうくにち", romaPronounce: "nijuukunichi", enVocab: "29th day of month", mmVocab: "နှစ်ဆယ့်ကိုးရက်နေ့", cnVocab: "二十九日", favFlag: "0", audioFileName: "Cal29")
          let vocabNumberMod49 = VocabularyModel(id: 108, category: "2", jpVocab: "さんじゅうにち", romaPronounce: "sanjuunichi", enVocab: "30th day of month", mmVocab: "သုံးဆယ်ရက်နေ့", cnVocab: "三十日", favFlag: "0", audioFileName: "Cal30")
          let vocabNumberMod50 = VocabularyModel(id: 109, category: "2", jpVocab: "さんじゅういちにち", romaPronounce: "sanjuuichinichi", enVocab: "31st day of month", mmVocab: "သုံးဆယ့်တစ်ရက်နေ့", cnVocab: "三十一日", favFlag: "0", audioFileName: "Cal31")
-        let vocabNumberMod51 = VocabularyModel(id: 110, category: "2", jpVocab: "きょう", romaPronounce: "kyou", enVocab: "31st day of month", mmVocab: "သုံးဆယ့်တစ်ရက်နေ့", cnVocab: "今天", favFlag: "0", audioFileName: "CalToday")
-        let vocabNumberMod52 = VocabularyModel(id: 111, category: "2", jpVocab: "きのう", romaPronounce: "kinou", enVocab: "today", mmVocab: "ဒီနေ့", cnVocab: "昨天", favFlag: "0", audioFileName: "CalYesterday")
-        let vocabNumberMod53 = VocabularyModel(id: 112, category: "2", jpVocab: "あした", romaPronounce: "ashita", enVocab: "tomorrow", mmVocab: "မနက်ဖြန်", cnVocab: "明天", favFlag: "0", audioFileName: "CalTomorrow")
-        let vocabNumberMod54 = VocabularyModel(id: 113, category: "2", jpVocab: "まいにち", romaPronounce: "mainichi", enVocab: "every day", mmVocab: "နေ့တိုင်း", cnVocab: "每天", favFlag: "0", audioFileName: "CalEveryDay")
-        let vocabNumberMod55 = VocabularyModel(id: 114, category: "2", jpVocab: "せんしゅう", romaPronounce: "senshuu", enVocab: "last week", mmVocab: "လွန်ခဲ့သောအပတ်", cnVocab: "上周", favFlag: "0", audioFileName: "CalLastWeek")
-        let vocabNumberMod56 = VocabularyModel(id: 115, category: "2", jpVocab: "こんしゅう", romaPronounce: "konshuu", enVocab: "this week", mmVocab: "ယခုအပတ်", cnVocab: "今周", favFlag: "0", audioFileName: "CalThisWeek")
-        let vocabNumberMod57 = VocabularyModel(id: 116, category: "2", jpVocab: "らいしゅう", romaPronounce: "raishuu", enVocab: "next week", mmVocab: "နောက်အပတ်", cnVocab: "下周", favFlag: "0", audioFileName: "CalNextWeek")
+        let vocabNumberMod51 = VocabularyModel(id: 110, category: "2", jpVocab: "きょう", romaPronounce: "kyou", enVocab: "Today", mmVocab: "ဒီနေ့", cnVocab: "今天", favFlag: "0", audioFileName: "CalToday")
+        let vocabNumberMod52 = VocabularyModel(id: 111, category: "2", jpVocab: "きのう", romaPronounce: "kinou", enVocab: "Yesterday", mmVocab: "မနေ့က", cnVocab: "昨天", favFlag: "0", audioFileName: "CalYesterday")
+        let vocabNumberMod53 = VocabularyModel(id: 112, category: "2", jpVocab: "あした", romaPronounce: "ashita", enVocab: "Tomorrow", mmVocab: "မနက်ဖြန်", cnVocab: "明天", favFlag: "0", audioFileName: "CalTomorrow")
+        let vocabNumberMod54 = VocabularyModel(id: 113, category: "2", jpVocab: "まいにち", romaPronounce: "mainichi", enVocab: "Everyday", mmVocab: "နေ့တိုင်း", cnVocab: "每天", favFlag: "0", audioFileName: "CalEveryDay")
+        let vocabNumberMod55 = VocabularyModel(id: 114, category: "2", jpVocab: "せんしゅう", romaPronounce: "senshuu", enVocab: "Last week", mmVocab: "လွန်ခဲ့သောအပတ်", cnVocab: "上周", favFlag: "0", audioFileName: "CalLastWeek")
+        let vocabNumberMod56 = VocabularyModel(id: 115, category: "2", jpVocab: "こんしゅう", romaPronounce: "konshuu", enVocab: "This week", mmVocab: "ယခုအပတ်", cnVocab: "今周", favFlag: "0", audioFileName: "CalThisWeek")
+        let vocabNumberMod57 = VocabularyModel(id: 116, category: "2", jpVocab: "らいしゅう", romaPronounce: "raishuu", enVocab: "Next week", mmVocab: "နောက်အပတ်", cnVocab: "下周", favFlag: "0", audioFileName: "CalNextWeek")
         
         self.vocabList?.append(vocabNumberMod1)
         self.vocabList?.append(vocabNumberMod2)
@@ -481,62 +473,65 @@ extension VocabListViewController : UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var selectedColor : UIColor?
         let cell = tableView.dequeueReusableCell(withIdentifier: "VocabListTableViewCell", for: indexPath) as! VocabListTableViewCell
-        let vocabValue = self.vocabList![indexPath.row]
-        let origUnFavImg = UIImage(named: vocabValue.favFlag == "0" ? "unfavorite" : "favorite")
-        let tintUnFavImg = origUnFavImg?.withRenderingMode(.alwaysTemplate)
-        cell.imgFavorite.setImage(tintUnFavImg, for: .normal)
         
-        cell.lblJpWord.text =  vocabValue.jpVocab
-        cell.lblRomaWord.text = vocabValue.romaPronounce
-        if choosenLanguage == "mm"{
-            cell.lblMeaningWord.text = vocabValue.mmVocab
-        }else if choosenLanguage == "en"{
-            cell.lblMeaningWord.text = vocabValue.enVocab
-        }else{
-            cell.lblMeaningWord.text = vocabValue.cnVocab
-        }
-        
-        if(choosenColor == "1"){
-            cell.imgFavorite.tintColor = UIColor(red: 124/255, green: 179/255, blue: 66/255, alpha: 1.0)
-            selectedColor = UIColor(red: 124/255, green: 179/255, blue: 66/255, alpha: 1.0)
-        }else if(choosenColor == "2"){
+            let vocabValue = self.vocabList![indexPath.row]
+            let origUnFavImg = UIImage(named: vocabValue.favFlag == "0" ? "unfavorite" : "favorite")
+            let tintUnFavImg = origUnFavImg?.withRenderingMode(.alwaysTemplate)
+            cell.imgFavorite.setImage(tintUnFavImg, for: .normal)
             
-            cell.imgFavorite.tintColor = UIColor(red: 236/255, green: 64/255, blue: 122/255, alpha: 1.0)
-            selectedColor = UIColor(red: 236/255, green: 64/255, blue: 122/255, alpha: 1.0)
-        }else if(choosenColor == "3"){
-            cell.imgFavorite.tintColor = UIColor(red: 26/255, green: 35/255, blue: 126/255, alpha: 1.0)
-            selectedColor = UIColor(red: 26/255, green: 35/255, blue: 126/255, alpha: 1.0)
-        }
-        
-        cell.favButtonPressed = {
-            var favFlag : String?
-            if (vocabValue.favFlag == "1"){
-                favFlag = "0"
+            cell.lblJpWord.text =  vocabValue.jpVocab
+            cell.lblRomaWord.text = vocabValue.romaPronounce
+            if choosenLanguage == "mm"{
+                cell.lblMeaningWord.text = vocabValue.mmVocab
+            }else if choosenLanguage == "en"{
+                cell.lblMeaningWord.text = vocabValue.enVocab
             }else{
-                favFlag = "1"
+                cell.lblMeaningWord.text = vocabValue.cnVocab
             }
-            let favoriteStatementString = "UPDATE Vocabularies SET FavFlag = '" + favFlag! + "' WHERE ID = \(vocabValue.id);"
-            let updateSts = self.vocabDb.setFavoriteVocab(favoriteStatementString: favoriteStatementString)
-            if(updateSts == 1){
-                if(self.category == "7"){
-                    self.vocabList?.remove(at: indexPath.row)
-                    self.vocabTable.reloadData()
-                    self.showAddedOrRemoveFavoriteMsg(message : "\(vocabValue.jpVocab) is removed from favorite items")
-                }else{
-                    vocabValue.favFlag = favFlag!
-                    let origFavImg = UIImage(named: favFlag == "1" ? "favorite" : "unfavorite")
-                    let tintFavImg = origFavImg?.withRenderingMode(.alwaysTemplate)
-                    cell.imgFavorite.setImage(tintFavImg, for: .normal)
-                    cell.imgFavorite.tintColor = selectedColor
-                    if(favFlag == "1"){
-                        self.showAddedOrRemoveFavoriteMsg(message: "\(vocabValue.jpVocab) is added as favorite item")
-                    }else{
-                        self.showAddedOrRemoveFavoriteMsg(message: "\(vocabValue.jpVocab) is removed from favorite items")
-                    }
-                }
+            
+            if(choosenColor == "1"){
+                cell.imgFavorite.tintColor = UIColor(red: 124/255, green: 179/255, blue: 66/255, alpha: 1.0)
+                selectedColor = UIColor(red: 124/255, green: 179/255, blue: 66/255, alpha: 1.0)
+            }else if(choosenColor == "2"){
                 
+                cell.imgFavorite.tintColor = UIColor(red: 236/255, green: 64/255, blue: 122/255, alpha: 1.0)
+                selectedColor = UIColor(red: 236/255, green: 64/255, blue: 122/255, alpha: 1.0)
+            }else if(choosenColor == "3"){
+                cell.imgFavorite.tintColor = UIColor(red: 26/255, green: 35/255, blue: 126/255, alpha: 1.0)
+                selectedColor = UIColor(red: 26/255, green: 35/255, blue: 126/255, alpha: 1.0)
             }
-        }
+            
+            cell.favButtonPressed = {
+                var favFlag : String?
+                if (vocabValue.favFlag == "1"){
+                    favFlag = "0"
+                }else{
+                    favFlag = "1"
+                }
+                let favoriteStatementString = "UPDATE Vocabularies SET FavFlag = '" + favFlag! + "' WHERE ID = \(vocabValue.id);"
+                let updateSts = self.vocabDb.setFavoriteVocab(favoriteStatementString: favoriteStatementString)
+                if(updateSts == 1){
+                    if(self.category == "7"){
+                        self.vocabList?.remove(at: indexPath.row)
+                        self.vocabTable.reloadData()
+                        self.showAddedOrRemoveFavoriteMsg(message : "\(vocabValue.jpVocab) is removed from favorite items")
+                    }else{
+                        vocabValue.favFlag = favFlag!
+                        let origFavImg = UIImage(named: favFlag == "1" ? "favorite" : "unfavorite")
+                        let tintFavImg = origFavImg?.withRenderingMode(.alwaysTemplate)
+                        cell.imgFavorite.setImage(tintFavImg, for: .normal)
+                        cell.imgFavorite.tintColor = selectedColor
+                        if(favFlag == "1"){
+                            self.showAddedOrRemoveFavoriteMsg(message: "\(vocabValue.jpVocab) is added as favorite item")
+                        }else{
+                            self.showAddedOrRemoveFavoriteMsg(message: "\(vocabValue.jpVocab) is removed from favorite items")
+                        }
+                    }
+                    
+                }
+            }
+      
+        
         
         return cell
     }
