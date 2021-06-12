@@ -32,48 +32,6 @@
 		6AB071C723E7D79A00962DF6 /* Basic__UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB071C623E7D79A00962DF6 /* Basic__UITests.swift */; };
 		6AB071D723E8543E00962DF6 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB071D523E8543E00962DF6 /* HomeCollectionViewCell.swift */; };
 		6AB071D823E8543E00962DF6 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB071D623E8543E00962DF6 /* HomeCollectionViewCell.xib */; };
-		6ACFA788243EDDFA007D2E03 /* NumJyuuRoku.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA76C243EDDFA007D2E03 /* NumJyuuRoku.m4a */; };
-		6ACFA789243EDDFA007D2E03 /* NumJyuu.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA76D243EDDFA007D2E03 /* NumJyuu.m4a */; };
-		6ACFA78A243EDDFA007D2E03 /* NumYonJyuu.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA76E243EDDFA007D2E03 /* NumYonJyuu.m4a */; };
-		6ACFA78B243EDDFA007D2E03 /* NumHachiJyuu.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA76F243EDDFA007D2E03 /* NumHachiJyuu.m4a */; };
-		6ACFA78C243EDDFA007D2E03 /* NumJyuuNana.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA770243EDDFA007D2E03 /* NumJyuuNana.m4a */; };
-		6ACFA78D243EDDFA007D2E03 /* NumJyuuKyuu.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA771243EDDFA007D2E03 /* NumJyuuKyuu.m4a */; };
-		6ACFA78E243EDDFA007D2E03 /* NumKyuuJyuu.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA772243EDDFA007D2E03 /* NumKyuuJyuu.m4a */; };
-		6ACFA78F243EDDFA007D2E03 /* NumJyuuIchi.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA773243EDDFA007D2E03 /* NumJyuuIchi.m4a */; };
-		6ACFA790243EDDFA007D2E03 /* NumJyuuGo.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA774243EDDFA007D2E03 /* NumJyuuGo.m4a */; };
-		6ACFA791243EDDFA007D2E03 /* NumGo.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA775243EDDFA007D2E03 /* NumGo.m4a */; };
-		6ACFA792243EDDFA007D2E03 /* NumNanaJyuu.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA776243EDDFA007D2E03 /* NumNanaJyuu.m4a */; };
-		6ACFA793243EDDFA007D2E03 /* NumHachi.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA777243EDDFA007D2E03 /* NumHachi.m4a */; };
-		6ACFA794243EDDFA007D2E03 /* NumSan.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA778243EDDFA007D2E03 /* NumSan.m4a */; };
-		6ACFA795243EDDFA007D2E03 /* NumYon.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA779243EDDFA007D2E03 /* NumYon.m4a */; };
-		6ACFA796243EDDFA007D2E03 /* NumJyuuHachi.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA77A243EDDFA007D2E03 /* NumJyuuHachi.m4a */; };
-		6ACFA797243EDDFA007D2E03 /* NumIchi 2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA77B243EDDFA007D2E03 /* NumIchi 2.m4a */; };
-		6ACFA798243EDDFA007D2E03 /* NumKyuu.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA77C243EDDFA007D2E03 /* NumKyuu.m4a */; };
-		6ACFA799243EDDFA007D2E03 /* NumSanJyuu.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA77D243EDDFA007D2E03 /* NumSanJyuu.m4a */; };
-		6ACFA79A243EDDFA007D2E03 /* NumHyaku.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA77E243EDDFA007D2E03 /* NumHyaku.m4a */; };
-		6ACFA79B243EDDFA007D2E03 /* NumRoku.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA77F243EDDFA007D2E03 /* NumRoku.m4a */; };
-		6ACFA79C243EDDFA007D2E03 /* NumJyuuNi.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA780243EDDFA007D2E03 /* NumJyuuNi.m4a */; };
-		6ACFA79D243EDDFA007D2E03 /* NumNi.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA781243EDDFA007D2E03 /* NumNi.m4a */; };
-		6ACFA79E243EDDFA007D2E03 /* NumNana.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA782243EDDFA007D2E03 /* NumNana.m4a */; };
-		6ACFA79F243EDDFA007D2E03 /* NumJyuuSan.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA783243EDDFA007D2E03 /* NumJyuuSan.m4a */; };
-		6ACFA7A0243EDDFA007D2E03 /* NumJyuuYon.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA784243EDDFA007D2E03 /* NumJyuuYon.m4a */; };
-		6ACFA7A1243EDDFA007D2E03 /* NumNiJyuu.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA785243EDDFA007D2E03 /* NumNiJyuu.m4a */; };
-		6ACFA7A2243EDDFA007D2E03 /* NumRokuJyuu.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA786243EDDFA007D2E03 /* NumRokuJyuu.m4a */; };
-		6ACFA7A3243EDDFA007D2E03 /* NumGoJyuu.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA787243EDDFA007D2E03 /* NumGoJyuu.m4a */; };
-		6ACFA7B4243EDE1F007D2E03 /* ColGray.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA7A6243EDE1F007D2E03 /* ColGray.m4a */; };
-		6ACFA7B5243EDE1F007D2E03 /* ColBrown.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA7A7243EDE1F007D2E03 /* ColBrown.m4a */; };
-		6ACFA7B6243EDE1F007D2E03 /* ColWhite.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA7A8243EDE1F007D2E03 /* ColWhite.m4a */; };
-		6ACFA7B7243EDE1F007D2E03 /* ColPurple.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA7A9243EDE1F007D2E03 /* ColPurple.m4a */; };
-		6ACFA7B8243EDE1F007D2E03 /* ColOrange.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA7AA243EDE1F007D2E03 /* ColOrange.m4a */; };
-		6ACFA7B9243EDE1F007D2E03 /* ColGreen.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA7AB243EDE1F007D2E03 /* ColGreen.m4a */; };
-		6ACFA7BA243EDE1F007D2E03 /* ColSilver.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA7AC243EDE1F007D2E03 /* ColSilver.m4a */; };
-		6ACFA7BB243EDE1F007D2E03 /* ColBlue.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA7AD243EDE1F007D2E03 /* ColBlue.m4a */; };
-		6ACFA7BC243EDE1F007D2E03 /* ColPink.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA7AE243EDE1F007D2E03 /* ColPink.m4a */; };
-		6ACFA7BD243EDE1F007D2E03 /* ColYellow.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA7AF243EDE1F007D2E03 /* ColYellow.m4a */; };
-		6ACFA7BE243EDE1F007D2E03 /* ColBronze.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA7B0243EDE1F007D2E03 /* ColBronze.m4a */; };
-		6ACFA7BF243EDE1F007D2E03 /* ColBlack.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA7B1243EDE1F007D2E03 /* ColBlack.m4a */; };
-		6ACFA7C0243EDE1F007D2E03 /* ColGold.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA7B2243EDE1F007D2E03 /* ColGold.m4a */; };
-		6ACFA7C1243EDE1F007D2E03 /* ColRed.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6ACFA7B3243EDE1F007D2E03 /* ColRed.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,48 +85,6 @@
 		6AB071C823E7D79B00962DF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AB071D523E8543E00962DF6 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		6AB071D623E8543E00962DF6 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
-		6ACFA76C243EDDFA007D2E03 /* NumJyuuRoku.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumJyuuRoku.m4a; sourceTree = "<group>"; };
-		6ACFA76D243EDDFA007D2E03 /* NumJyuu.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumJyuu.m4a; sourceTree = "<group>"; };
-		6ACFA76E243EDDFA007D2E03 /* NumYonJyuu.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumYonJyuu.m4a; sourceTree = "<group>"; };
-		6ACFA76F243EDDFA007D2E03 /* NumHachiJyuu.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumHachiJyuu.m4a; sourceTree = "<group>"; };
-		6ACFA770243EDDFA007D2E03 /* NumJyuuNana.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumJyuuNana.m4a; sourceTree = "<group>"; };
-		6ACFA771243EDDFA007D2E03 /* NumJyuuKyuu.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumJyuuKyuu.m4a; sourceTree = "<group>"; };
-		6ACFA772243EDDFA007D2E03 /* NumKyuuJyuu.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumKyuuJyuu.m4a; sourceTree = "<group>"; };
-		6ACFA773243EDDFA007D2E03 /* NumJyuuIchi.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumJyuuIchi.m4a; sourceTree = "<group>"; };
-		6ACFA774243EDDFA007D2E03 /* NumJyuuGo.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumJyuuGo.m4a; sourceTree = "<group>"; };
-		6ACFA775243EDDFA007D2E03 /* NumGo.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumGo.m4a; sourceTree = "<group>"; };
-		6ACFA776243EDDFA007D2E03 /* NumNanaJyuu.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumNanaJyuu.m4a; sourceTree = "<group>"; };
-		6ACFA777243EDDFA007D2E03 /* NumHachi.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumHachi.m4a; sourceTree = "<group>"; };
-		6ACFA778243EDDFA007D2E03 /* NumSan.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumSan.m4a; sourceTree = "<group>"; };
-		6ACFA779243EDDFA007D2E03 /* NumYon.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumYon.m4a; sourceTree = "<group>"; };
-		6ACFA77A243EDDFA007D2E03 /* NumJyuuHachi.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumJyuuHachi.m4a; sourceTree = "<group>"; };
-		6ACFA77B243EDDFA007D2E03 /* NumIchi 2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NumIchi 2.m4a"; sourceTree = "<group>"; };
-		6ACFA77C243EDDFA007D2E03 /* NumKyuu.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumKyuu.m4a; sourceTree = "<group>"; };
-		6ACFA77D243EDDFA007D2E03 /* NumSanJyuu.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumSanJyuu.m4a; sourceTree = "<group>"; };
-		6ACFA77E243EDDFA007D2E03 /* NumHyaku.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumHyaku.m4a; sourceTree = "<group>"; };
-		6ACFA77F243EDDFA007D2E03 /* NumRoku.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumRoku.m4a; sourceTree = "<group>"; };
-		6ACFA780243EDDFA007D2E03 /* NumJyuuNi.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumJyuuNi.m4a; sourceTree = "<group>"; };
-		6ACFA781243EDDFA007D2E03 /* NumNi.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumNi.m4a; sourceTree = "<group>"; };
-		6ACFA782243EDDFA007D2E03 /* NumNana.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumNana.m4a; sourceTree = "<group>"; };
-		6ACFA783243EDDFA007D2E03 /* NumJyuuSan.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumJyuuSan.m4a; sourceTree = "<group>"; };
-		6ACFA784243EDDFA007D2E03 /* NumJyuuYon.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumJyuuYon.m4a; sourceTree = "<group>"; };
-		6ACFA785243EDDFA007D2E03 /* NumNiJyuu.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumNiJyuu.m4a; sourceTree = "<group>"; };
-		6ACFA786243EDDFA007D2E03 /* NumRokuJyuu.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumRokuJyuu.m4a; sourceTree = "<group>"; };
-		6ACFA787243EDDFA007D2E03 /* NumGoJyuu.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumGoJyuu.m4a; sourceTree = "<group>"; };
-		6ACFA7A6243EDE1F007D2E03 /* ColGray.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = ColGray.m4a; sourceTree = "<group>"; };
-		6ACFA7A7243EDE1F007D2E03 /* ColBrown.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = ColBrown.m4a; sourceTree = "<group>"; };
-		6ACFA7A8243EDE1F007D2E03 /* ColWhite.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = ColWhite.m4a; sourceTree = "<group>"; };
-		6ACFA7A9243EDE1F007D2E03 /* ColPurple.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = ColPurple.m4a; sourceTree = "<group>"; };
-		6ACFA7AA243EDE1F007D2E03 /* ColOrange.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = ColOrange.m4a; sourceTree = "<group>"; };
-		6ACFA7AB243EDE1F007D2E03 /* ColGreen.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = ColGreen.m4a; sourceTree = "<group>"; };
-		6ACFA7AC243EDE1F007D2E03 /* ColSilver.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = ColSilver.m4a; sourceTree = "<group>"; };
-		6ACFA7AD243EDE1F007D2E03 /* ColBlue.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = ColBlue.m4a; sourceTree = "<group>"; };
-		6ACFA7AE243EDE1F007D2E03 /* ColPink.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = ColPink.m4a; sourceTree = "<group>"; };
-		6ACFA7AF243EDE1F007D2E03 /* ColYellow.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = ColYellow.m4a; sourceTree = "<group>"; };
-		6ACFA7B0243EDE1F007D2E03 /* ColBronze.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = ColBronze.m4a; sourceTree = "<group>"; };
-		6ACFA7B1243EDE1F007D2E03 /* ColBlack.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = ColBlack.m4a; sourceTree = "<group>"; };
-		6ACFA7B2243EDE1F007D2E03 /* ColGold.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = ColGold.m4a; sourceTree = "<group>"; };
-		6ACFA7B3243EDE1F007D2E03 /* ColRed.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = ColRed.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,16 +202,6 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
-		6AA7140324322C15004EE01F /* Audio */ = {
-			isa = PBXGroup;
-			children = (
-				6ACFA7A5243EDE1F007D2E03 /* Color */,
-				6ACFA7A4243EDE0D007D2E03 /* Family */,
-				6ACFA76B243EDDFA007D2E03 /* Number */,
-			);
-			path = Audio;
-			sourceTree = "<group>";
-		};
 		6AB0719823E7D79300962DF6 = {
 			isa = PBXGroup;
 			children = (
@@ -320,7 +226,6 @@
 		6AB071A323E7D79300962DF6 /* Basic日本 */ = {
 			isa = PBXGroup;
 			children = (
-				6AA7140324322C15004EE01F /* Audio */,
 				23490FA72428A6B90093ADC7 /* Common */,
 				23D4EB8424235A4300A0B96A /* Extension */,
 				6A633E5023F7D43D005F8D09 /* Constants */,
@@ -363,72 +268,6 @@
 				6AB071D623E8543E00962DF6 /* HomeCollectionViewCell.xib */,
 			);
 			path = HomeScreen;
-			sourceTree = "<group>";
-		};
-		6ACFA76B243EDDFA007D2E03 /* Number */ = {
-			isa = PBXGroup;
-			children = (
-				6ACFA76C243EDDFA007D2E03 /* NumJyuuRoku.m4a */,
-				6ACFA76D243EDDFA007D2E03 /* NumJyuu.m4a */,
-				6ACFA76E243EDDFA007D2E03 /* NumYonJyuu.m4a */,
-				6ACFA76F243EDDFA007D2E03 /* NumHachiJyuu.m4a */,
-				6ACFA770243EDDFA007D2E03 /* NumJyuuNana.m4a */,
-				6ACFA771243EDDFA007D2E03 /* NumJyuuKyuu.m4a */,
-				6ACFA772243EDDFA007D2E03 /* NumKyuuJyuu.m4a */,
-				6ACFA773243EDDFA007D2E03 /* NumJyuuIchi.m4a */,
-				6ACFA774243EDDFA007D2E03 /* NumJyuuGo.m4a */,
-				6ACFA775243EDDFA007D2E03 /* NumGo.m4a */,
-				6ACFA776243EDDFA007D2E03 /* NumNanaJyuu.m4a */,
-				6ACFA777243EDDFA007D2E03 /* NumHachi.m4a */,
-				6ACFA778243EDDFA007D2E03 /* NumSan.m4a */,
-				6ACFA779243EDDFA007D2E03 /* NumYon.m4a */,
-				6ACFA77A243EDDFA007D2E03 /* NumJyuuHachi.m4a */,
-				6ACFA77B243EDDFA007D2E03 /* NumIchi 2.m4a */,
-				6ACFA77C243EDDFA007D2E03 /* NumKyuu.m4a */,
-				6ACFA77D243EDDFA007D2E03 /* NumSanJyuu.m4a */,
-				6ACFA77E243EDDFA007D2E03 /* NumHyaku.m4a */,
-				6ACFA77F243EDDFA007D2E03 /* NumRoku.m4a */,
-				6ACFA780243EDDFA007D2E03 /* NumJyuuNi.m4a */,
-				6ACFA781243EDDFA007D2E03 /* NumNi.m4a */,
-				6ACFA782243EDDFA007D2E03 /* NumNana.m4a */,
-				6ACFA783243EDDFA007D2E03 /* NumJyuuSan.m4a */,
-				6ACFA784243EDDFA007D2E03 /* NumJyuuYon.m4a */,
-				6ACFA785243EDDFA007D2E03 /* NumNiJyuu.m4a */,
-				6ACFA786243EDDFA007D2E03 /* NumRokuJyuu.m4a */,
-				6ACFA787243EDDFA007D2E03 /* NumGoJyuu.m4a */,
-			);
-			name = Number;
-			path = ../../../../Desktop/JapaneseVocab_Audio/Number;
-			sourceTree = "<group>";
-		};
-		6ACFA7A4243EDE0D007D2E03 /* Family */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Family;
-			path = ../../../../Desktop/JapaneseVocab_Audio/Family;
-			sourceTree = "<group>";
-		};
-		6ACFA7A5243EDE1F007D2E03 /* Color */ = {
-			isa = PBXGroup;
-			children = (
-				6ACFA7A6243EDE1F007D2E03 /* ColGray.m4a */,
-				6ACFA7A7243EDE1F007D2E03 /* ColBrown.m4a */,
-				6ACFA7A8243EDE1F007D2E03 /* ColWhite.m4a */,
-				6ACFA7A9243EDE1F007D2E03 /* ColPurple.m4a */,
-				6ACFA7AA243EDE1F007D2E03 /* ColOrange.m4a */,
-				6ACFA7AB243EDE1F007D2E03 /* ColGreen.m4a */,
-				6ACFA7AC243EDE1F007D2E03 /* ColSilver.m4a */,
-				6ACFA7AD243EDE1F007D2E03 /* ColBlue.m4a */,
-				6ACFA7AE243EDE1F007D2E03 /* ColPink.m4a */,
-				6ACFA7AF243EDE1F007D2E03 /* ColYellow.m4a */,
-				6ACFA7B0243EDE1F007D2E03 /* ColBronze.m4a */,
-				6ACFA7B1243EDE1F007D2E03 /* ColBlack.m4a */,
-				6ACFA7B2243EDE1F007D2E03 /* ColGold.m4a */,
-				6ACFA7B3243EDE1F007D2E03 /* ColRed.m4a */,
-			);
-			name = Color;
-			path = ../../../../Desktop/JapaneseVocab_Audio/Color;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -546,55 +385,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AB071B123E7D79A00962DF6 /* LaunchScreen.storyboard in Resources */,
-				6ACFA7A2243EDDFA007D2E03 /* NumRokuJyuu.m4a in Resources */,
 				6AB071AE23E7D79A00962DF6 /* Assets.xcassets in Resources */,
-				6ACFA7B6243EDE1F007D2E03 /* ColWhite.m4a in Resources */,
-				6ACFA79A243EDDFA007D2E03 /* NumHyaku.m4a in Resources */,
-				6ACFA7A0243EDDFA007D2E03 /* NumJyuuYon.m4a in Resources */,
-				6ACFA78D243EDDFA007D2E03 /* NumJyuuKyuu.m4a in Resources */,
-				6ACFA79B243EDDFA007D2E03 /* NumRoku.m4a in Resources */,
-				6ACFA78E243EDDFA007D2E03 /* NumKyuuJyuu.m4a in Resources */,
-				6ACFA7B8243EDE1F007D2E03 /* ColOrange.m4a in Resources */,
 				6A633E4823F7A552005F8D09 /* VocabListStoryBoard.storyboard in Resources */,
 				6AB071AC23E7D79300962DF6 /* Main.storyboard in Resources */,
-				6ACFA7B7243EDE1F007D2E03 /* ColPurple.m4a in Resources */,
-				6ACFA7C1243EDE1F007D2E03 /* ColRed.m4a in Resources */,
-				6ACFA7BD243EDE1F007D2E03 /* ColYellow.m4a in Resources */,
-				6ACFA79E243EDDFA007D2E03 /* NumNana.m4a in Resources */,
-				6ACFA796243EDDFA007D2E03 /* NumJyuuHachi.m4a in Resources */,
-				6ACFA789243EDDFA007D2E03 /* NumJyuu.m4a in Resources */,
-				6ACFA7BC243EDE1F007D2E03 /* ColPink.m4a in Resources */,
-				6ACFA79D243EDDFA007D2E03 /* NumNi.m4a in Resources */,
-				6ACFA7B9243EDE1F007D2E03 /* ColGreen.m4a in Resources */,
-				6ACFA791243EDDFA007D2E03 /* NumGo.m4a in Resources */,
-				6ACFA78C243EDDFA007D2E03 /* NumJyuuNana.m4a in Resources */,
-				6ACFA7B4243EDE1F007D2E03 /* ColGray.m4a in Resources */,
 				6AB071D823E8543E00962DF6 /* HomeCollectionViewCell.xib in Resources */,
-				6ACFA7BE243EDE1F007D2E03 /* ColBronze.m4a in Resources */,
-				6ACFA78F243EDDFA007D2E03 /* NumJyuuIchi.m4a in Resources */,
-				6ACFA78A243EDDFA007D2E03 /* NumYonJyuu.m4a in Resources */,
-				6ACFA792243EDDFA007D2E03 /* NumNanaJyuu.m4a in Resources */,
-				6ACFA7BB243EDE1F007D2E03 /* ColBlue.m4a in Resources */,
-				6ACFA798243EDDFA007D2E03 /* NumKyuu.m4a in Resources */,
-				6ACFA793243EDDFA007D2E03 /* NumHachi.m4a in Resources */,
-				6ACFA7A1243EDDFA007D2E03 /* NumNiJyuu.m4a in Resources */,
-				6ACFA7C0243EDE1F007D2E03 /* ColGold.m4a in Resources */,
-				6ACFA790243EDDFA007D2E03 /* NumJyuuGo.m4a in Resources */,
 				23D5AACD24249D93000412C0 /* Localizable.strings in Resources */,
-				6ACFA788243EDDFA007D2E03 /* NumJyuuRoku.m4a in Resources */,
-				6ACFA79C243EDDFA007D2E03 /* NumJyuuNi.m4a in Resources */,
-				6ACFA7BA243EDE1F007D2E03 /* ColSilver.m4a in Resources */,
-				6ACFA7B5243EDE1F007D2E03 /* ColBrown.m4a in Resources */,
-				6ACFA799243EDDFA007D2E03 /* NumSanJyuu.m4a in Resources */,
-				6ACFA7BF243EDE1F007D2E03 /* ColBlack.m4a in Resources */,
-				6ACFA7A3243EDDFA007D2E03 /* NumGoJyuu.m4a in Resources */,
 				6A633E5723F7F544005F8D09 /* Storyboard.storyboard in Resources */,
-				6ACFA795243EDDFA007D2E03 /* NumYon.m4a in Resources */,
-				6ACFA797243EDDFA007D2E03 /* NumIchi 2.m4a in Resources */,
-				6ACFA78B243EDDFA007D2E03 /* NumHachiJyuu.m4a in Resources */,
-				6ACFA79F243EDDFA007D2E03 /* NumJyuuSan.m4a in Resources */,
 				6A633E4F23F7C3ED005F8D09 /* VocabListTableViewCell.xib in Resources */,
-				6ACFA794243EDDFA007D2E03 /* NumSan.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
