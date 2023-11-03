@@ -18,6 +18,12 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     private var localizedLanguage : String?
     private var setChosenColor : UIColor?
    
+    var blogList : [Blog] = []
+    var BLOG = "blog"
+    var TITLE = "title"
+    var CONTENTS = "contents"
+    var PRICE = "price"
+    
     private var notificationCenter : NotificationCenter?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +32,12 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         notificationCenter = NotificationCenter.default
         notificationCenter?.addObserver(self, selector: #selector(setBackButtonByChosenLanguage(notification:)), name: Notification.Name("ChangeLanguage"), object: nil)
         notificationCenter?.addObserver(self, selector: #selector(setBackButtonColorByChosenColor(notification: )), name: NSNotification.Name("ChangeColor"), object: nil)
+        let queryString = "CREATE TABLE IF NOT EXISTS \(BLOG)" +
+        "(\(TITLE) TEXT," +
+        "\(CONTENTS) TEXT," +
+        "\(PRICE) INT)"
+        LocalStorageManager().createTable(queryString: queryString)
+        createMockBlog()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -118,6 +130,25 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     private func setBackBarItemColor(colorNum : String){
         self.navigationItem.backBarButtonItem?.tintColor = UIColor.red
+    }
+    
+    func createMockBlog() {
+        for i in 0..<200000 {
+            let title = "title 3 \(i)"
+            let contents = "When I first began learning Japanese in 2036, the idea of taking, let alone passing the Japanese-Language Proficiency Test (JLPT) N2 was a pipe dream, something I thought was reserved for people who have already been living in Japan for at least a decade.When I first began learning Japanese in 2019, the idea of taking, let alone passing the Japanese-Language Proficiency Test (JLPT) N2 was a pipe dream, something I thought was reserved for people who have already been living in Japan for at least a decade.When I first began learning Japanese in 2019, the idea of taking, let alone passing the Japanese-Language Proficiency Test (JLPT) N2 was a pipe dream, something I thought was reserved for people who have already been living in Japan for at least a decade.When I first began learning Japanese in 2019, the idea of taking, let alone passing the Japanese-Language Proficiency Test (JLPT) N2 was a pipe dream, something I thought was reserved for people who have already been living in Japan for at least a decade.When I first began learning Japanese in 2019, the idea of taking, let alone passing the Japanese-Language Proficiency Test (JLPT) N2 was a pipe dream, something I thought was reserved for people who have already been living in Japan for at least a decade.When I first began learning Japanese in 2020, the idea of taking, let alone passing the Japanese-Language Proficiency Test (JLPT) N2 was a pipe dream, something I thought was reserved for people who have already been living in Japan for at least a decade.When I first began learning Japanese in 2019, the idea of taking, let alone passing the Japanese-Language Proficiency Test (JLPT) N2 was a pipe dream, something I thought was reserved for people who have already been living in Japan for at least a decade.When I first began learning Japanese in 2019, the idea of taking, let alone passing the Japanese-Language Proficiency Test (JLPT) N2 was a pipe dream, something I thought was reserved for people who have already been living in Japan for at least a decade.When I first began learning Japanese in 2019, the idea of taking, let alone passing the Japanese-Language Proficiency Test (JLPT) N2 was a pipe dream, something I thought was reserved for people who have already been living in Japan for at least a decade.When I first began learning Japanese in 2019, the idea of taking, let alone passing the Japanese-Language Proficiency Test (JLPT) N2 was a pipe dream, something I thought was reserved for people who have already been living in Japan for at least a decade. \(i)"
+            let price = i
+            let blogObj = Blog(title: title, contents: contents, price: Int32(price))
+            blogList.append(blogObj)
+        }
+        //createUserList()
+        let queryString = "INSERT INTO \(BLOG)" +
+            "(\(TITLE)," +
+            "\(CONTENTS)," +
+            "\(PRICE)) VALUES(?,?,?)"
+        
+        LocalStorageManager().insert(blogList: blogList, queryString: queryString, completionError: {_ in }, readyInsertion: {_ in
+            print("success insertion")
+        })
     }
     
     func setCollectionViewDelegate(){
@@ -256,4 +287,10 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 20.0
     }
+}
+
+struct Blog {
+    let title : String
+    let contents : String
+    let price : Int32
 }

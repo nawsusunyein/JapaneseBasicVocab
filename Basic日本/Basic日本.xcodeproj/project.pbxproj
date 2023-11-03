@@ -17,6 +17,7 @@
 		6A4919532AEE1DF6007A1569 /* Pods_Basic日本.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4919522AEE1DF6007A1569 /* Pods_Basic日本.framework */; };
 		6A4919552AEE1E03007A1569 /* FirebaseMessaging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4919542AEE1E03007A1569 /* FirebaseMessaging.framework */; };
 		6A4919572AEE29E0007A1569 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A4919562AEE29E0007A1569 /* GoogleService-Info.plist */; };
+		6A49195B2AEF31E6007A1569 /* LocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A49195A2AEF31E6007A1569 /* LocalStorageManager.swift */; };
 		6A55D9DF23F3B9A7006B3265 /* DataBaseCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A55D9DE23F3B9A7006B3265 /* DataBaseCreation.swift */; };
 		6A55D9E123F3BE27006B3265 /* SqliteError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A55D9E023F3BE27006B3265 /* SqliteError.swift */; };
 		6A55D9E323F3D928006B3265 /* VocabularyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A55D9E223F3D928006B3265 /* VocabularyModel.swift */; };
@@ -78,6 +79,7 @@
 		6A4919542AEE1E03007A1569 /* FirebaseMessaging.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseMessaging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A4919562AEE29E0007A1569 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6A4919582AEE29F5007A1569 /* Basic日本.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Basic日本.entitlements"; sourceTree = "<group>"; };
+		6A49195A2AEF31E6007A1569 /* LocalStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageManager.swift; sourceTree = "<group>"; };
 		6A55D9DE23F3B9A7006B3265 /* DataBaseCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseCreation.swift; sourceTree = "<group>"; };
 		6A55D9E023F3BE27006B3265 /* SqliteError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqliteError.swift; sourceTree = "<group>"; };
 		6A55D9E223F3D928006B3265 /* VocabularyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyModel.swift; sourceTree = "<group>"; };
@@ -196,6 +198,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		6A4919592AEF31CE007A1569 /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+				6A49195A2AEF31E6007A1569 /* LocalStorageManager.swift */,
+			);
+			path = LocalStorage;
+			sourceTree = "<group>";
+		};
 		6A55D9DC23F3B975006B3265 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +295,7 @@
 		6AB071A323E7D79300962DF6 /* Basic日本 */ = {
 			isa = PBXGroup;
 			children = (
+				6A4919592AEF31CE007A1569 /* LocalStorage */,
 				6A4919582AEE29F5007A1569 /* Basic日本.entitlements */,
 				6A4919562AEE29E0007A1569 /* GoogleService-Info.plist */,
 				23490FA72428A6B90093ADC7 /* Common */,
@@ -616,6 +627,7 @@
 				6A55D9DF23F3B9A7006B3265 /* DataBaseCreation.swift in Sources */,
 				6A633E4E23F7C3ED005F8D09 /* VocabListTableViewCell.swift in Sources */,
 				6A633E5223F7D456005F8D09 /* AppConstants.swift in Sources */,
+				6A49195B2AEF31E6007A1569 /* LocalStorageManager.swift in Sources */,
 				23D5AACA24249C63000412C0 /* StringExtension.swift in Sources */,
 				23D4EB8624235A6F00A0B96A /* UIDeviceExt.swift in Sources */,
 			);
