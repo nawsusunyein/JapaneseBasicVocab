@@ -1,0 +1,6 @@
+framework module Pods_Basic___Basic__UITests {
+  umbrella header "Pods-Basic日本-Basic日本UITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

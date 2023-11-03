@@ -1,0 +1,79 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'macos-latest'
+
+workspace:
+  clean: all
+
+steps:
+
+- bash: |
+   # Fixing permissions issues, otherwise xcode build will fail with a failed 'PhaseScriptExecution Copy ...' command
+   # See: https://stackoverflow.com/questions/38465217/cordova-error-code-65-for-command-xcodebuild-with-args
+   
+   chmod -R +x $(System.DefaultWorkingDirectory)
+
+  displayName: 'Fix permission issues'
+
+- script: /usr/local/bin/pod install
+  workingDirectory: ''
+  displayName: 'pod install'
+- task: InstallAppleCertificate@2
+  inputs:
+    certSecureFile: 'DevCertificate.p12'
+    certPwd: '12345678'
+    keychain: 'temp'
+- task: InstallAppleProvisioningProfile@1
+  inputs:
+    provisioningProfileLocation: 'secureFiles'
+    provProfileSecureFile: 'Dev_Foreign_Language_App.mobileprovision'
+    removeProfile: true
+- task: Xcode@5
+  inputs:
+    actions: 'build'
+    configuration: 'Dev'
+    sdk: 'iphoneos'
+    xcWorkspacePath: '**/Basic日本.xcworkspace'
+    scheme: 'Dev'
+    xcodeVersion: 'default'
+    packageApp: true
+    signingOption: 'manual'
+    signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
+    provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
+- task: CopyFiles@2
+  inputs:
+    contents: '**/*.ipa'
+    targetFolder: '$(build.artifactStagingDirectory)'
+    overWrite: true
+    flattenFolders: true
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(build.artifactStagingDirectory)'
+    artifactName: 'drop'
+    publishLocation: 'Container'
+
+- task: CmdLine@2
+  inputs:
+    script: |
+      displayName : 'Install Firebase Tools'
+      inputs : 
+        script : curl -sL firebase.tools | bash
+         workingDirectory : '$(Agent.ToolsDirectory)'|
+         
+- task: CmdLine@2
+  displayName: 'Deploy IPA to Firebase'
+  inputs:
+    script: |
+      firebase appdistribution:distribute *.ipa \
+      --app "$(appId)" \
+      --token "$(firebaseToken)" \
+      --groups "$(groupName)" \
+      --release-notes "$BUILD_SOURCEVERSIONMESSAGE"
+    workingDirectory: '$(build.artifactStagingDirectory)'
