@@ -56,6 +56,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         self.registerCollectionViewCell()
         self.homeCollectionView.reloadData()
         print("testing testing")
+        print("new testing new testing new testing")
     }
     
     @objc private func setBackButtonByChosenLanguage(notification:NSNotification){
