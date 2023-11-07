@@ -13,15 +13,6 @@ workspace:
   clean: all
 
 steps:
-
-- bash: |
-   # Fixing permissions issues, otherwise xcode build will fail with a failed 'PhaseScriptExecution Copy ...' command
-   # See: https://stackoverflow.com/questions/38465217/cordova-error-code-65-for-command-xcodebuild-with-args
-   
-   chmod -R +x $(System.DefaultWorkingDirectory)
-
-  displayName: 'Fix permission issues'
-
 - script: /usr/local/bin/pod install
   workingDirectory: ''
   displayName: 'pod install'
