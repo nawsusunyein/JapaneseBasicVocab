@@ -32,7 +32,7 @@
             "coupon_body": "ファッション商品5％OFF",
             "coupon_id": "cp9",
             "shop_id": "2",
-            "coupon_conditions":"条件文章
+            "coupon_conditions": "条件文章
 ああああああああ",
             "coupon_start_date": "2023-10-23",
             "coupon_end_date": "9999-12-31"
@@ -51,7 +51,7 @@
             "coupon_body": "全品50%OFF",
             "coupon_id": "6",
             "shop_id": "1",
-            "coupon_conditions":"利用条件文章
+            "coupon_conditions": "利用条件文章
 あああああ",
             "coupon_start_date": "2023-10-20",
             "coupon_end_date": "9999-12-31"
