@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fbp-MO-A0d">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fbp-MO-A0d">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GiF-OC-K4V">
-                                <rect key="frame" x="16" y="112" width="382" height="742"/>
+                                <rect key="frame" x="16" y="116" width="382" height="669"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="nRL-og-ncj">
                                     <size key="itemSize" width="150" height="120"/>
@@ -27,16 +27,30 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKu-60-NJg">
+                                <rect key="frame" x="16" y="801" width="382" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="3eB-cq-CAb"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Go to Chat"/>
+                                <connections>
+                                    <action selector="goToChatWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="08W-Sw-3sP"/>
+                                </connections>
+                            </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.48627450980392156" green="0.70196078431372544" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HKu-60-NJg" secondAttribute="trailing" constant="16" id="4OC-FK-4Ch"/>
                             <constraint firstItem="GiF-OC-K4V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KhQ-wD-fqJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HKu-60-NJg" secondAttribute="bottom" constant="16" id="QZG-kx-L7Q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GiF-OC-K4V" secondAttribute="trailing" constant="16" id="Y7y-nP-kgc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GiF-OC-K4V" secondAttribute="bottom" constant="8" id="kjS-5r-jdy"/>
+                            <constraint firstItem="HKu-60-NJg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="hAH-6B-9FY"/>
                             <constraint firstItem="GiF-OC-K4V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="oYy-cj-tGY"/>
+                            <constraint firstItem="HKu-60-NJg" firstAttribute="top" secondItem="GiF-OC-K4V" secondAttribute="bottom" constant="16" id="qck-zs-58V"/>
                             <constraint firstItem="GiF-OC-K4V" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="vTI-Yx-oeI"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="SbK-kB-TXS"/>
                     <connections>
@@ -53,7 +67,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fbp-MO-A0d" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g89-yp-ZjY">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

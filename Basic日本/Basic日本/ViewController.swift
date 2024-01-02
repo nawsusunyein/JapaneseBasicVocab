@@ -32,12 +32,12 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         notificationCenter = NotificationCenter.default
         notificationCenter?.addObserver(self, selector: #selector(setBackButtonByChosenLanguage(notification:)), name: Notification.Name("ChangeLanguage"), object: nil)
         notificationCenter?.addObserver(self, selector: #selector(setBackButtonColorByChosenColor(notification: )), name: NSNotification.Name("ChangeColor"), object: nil)
-        let queryString = "CREATE TABLE IF NOT EXISTS \(BLOG)" +
-        "(\(TITLE) TEXT," +
-        "\(CONTENTS) TEXT," +
-        "\(PRICE) INT)"
-        LocalStorageManager().createTable(queryString: queryString)
-        createMockBlog()
+//        let queryString = "CREATE TABLE IF NOT EXISTS \(BLOG)" +
+//        "(\(TITLE) TEXT," +
+//        "\(CONTENTS) TEXT," +
+//        "\(PRICE) INT)"
+       // LocalStorageManager().createTable(queryString: queryString)
+        //createMockBlog()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +57,16 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         self.homeCollectionView.reloadData()
         print("testing testing")
         print("new testing new testing new testing")
+    }
+    
+    @IBAction func goToChat(sender : AnyObject) {
+//        let chatStoryboard = UIStoryboard(name: "ChatStoryboard", bundle: nil)
+//        let chatVC = chatStoryboard.instantiateViewController(withIdentifier: "ChatScene") as! ChatViewController
+//        self.navigationController?.pushViewController(chatVC, animated: true)
+        let chatMainStoryboard = UIStoryboard(name: "ChatMainStoryboard", bundle: nil)
+        let chatMainVC = chatMainStoryboard.instantiateViewController(withIdentifier: "ChatMainScene") as! ChatMainViewController
+        chatMainVC.initVC(username: "苏苏", place: "三宮商店街", chatStatus: "Valid")
+        self.navigationController?.pushViewController(chatMainVC, animated: true)
     }
     
     @objc private func setBackButtonByChosenLanguage(notification:NSNotification){

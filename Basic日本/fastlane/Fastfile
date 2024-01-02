@@ -1,0 +1,31 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :vocablane do
+    # add actions here: https://docs.fastlane.tools/actions
+        release = firebase_app_distribution(
+            app: "1:885851579117:ios:23a20c19c8757b1d4c62e4",
+	    firebase_cli_token: "1//0e5_HZVTimdbbCgYIARAAGA4SNwF-L9IrN_zR9U07Nx8q1q2EkT9mun7tZrepqJH1djiznj4TNVT5Knuzr7tho25pEB4KK7iC6bg",
+	    ipa_path: "/Users/nawsusunyein/Desktop/AppIPA2/Basic日本.ipa",
+            testers: "aprilqueen92226@gmail.com, susunyein283@gmail.com",
+            groups: "iOS Vocab",
+            release_notes: "Releasing test"
+        )
+  end
+end

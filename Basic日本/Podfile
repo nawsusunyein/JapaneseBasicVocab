@@ -6,8 +6,7 @@ target 'Basic日本' do
 use_frameworks!
 
   # Pods for Basic日本
-  pod 'FirebaseCore'
-  pod 'FirebaseMessaging'
+  pod 'MessageKit'
   
   target 'Basic日本Tests' do
     # Pods for testing
