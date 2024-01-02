@@ -62,6 +62,10 @@ class ChatMainViewController: UIViewController {
          height: view.bounds.height - headerHeight)
      }
 
+    @IBAction func back(sender : AnyObject) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     func initVC(username : String, place: String,chatStatus : String) {
         self.name = username
         self.place = place
