@@ -39,7 +39,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
        // LocalStorageManager().createTable(queryString: queryString)
         //createMockBlog()
         getTodayDate()
-        resetDateTime(resetTime: "09:00")
+        resetDateTime(resetTime: "00:00")
     }
 
     override func viewWillAppear(_ animated: Bool) {
