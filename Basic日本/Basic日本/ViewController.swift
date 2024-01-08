@@ -38,6 +38,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
 //        "\(PRICE) INT)"
        // LocalStorageManager().createTable(queryString: queryString)
         //createMockBlog()
+        getTodayDate()
+        resetDateTime(resetTime: "09:00")
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -171,6 +173,32 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     func registerCollectionViewCell(){
         let nibName = UINib(nibName:"HomeCollectionViewCell", bundle: nil)
         self.homeCollectionView.register(nibName, forCellWithReuseIdentifier: "homeCollectionViewCell")
+    }
+    
+    // Date setting
+    
+    func getTodayDate() {
+        let todayDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
+        let todayDateString = dateFormatter.string(from: todayDate)
+        print("today date : \(todayDateString)")
+    }
+    
+    func resetDateTime(resetTime : String) {
+        let now = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        let resetDate = dateFormatter.date(from: resetTime)
+        
+        print("reset date : \(resetDate)")
+        let date = Calendar.current.date(bySettingHour: 15, minute: 34, second: 0, of: now)!
+        let timer = Timer(fireAt: date, interval: 0, target: self, selector: #selector(resetData), userInfo: nil, repeats: false)
+        RunLoop.main.add(timer, forMode: RunLoop.Mode.common)
+    }
+    
+    @objc func resetData() {
+        print("reset data")
     }
     
     // Collection View Methods
