@@ -48,6 +48,11 @@ class ChatViewController: MessagesViewController {
                 messageInputBar.setLeftStackViewWidthConstant(to: 50, animated: false)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.becomeFirstResponder()
+    }
+    
     func initVC(username : String?, id : String?, chatStatus : String?) {
         print("username : \(username), id : \(id), chat status : \(chatStatus)")
     }

@@ -52,7 +52,7 @@ class ChatMainViewController: UIViewController {
 
      override func viewDidLayoutSubviews() {
        super.viewDidLayoutSubviews()
-       let headerHeight: CGFloat = 100
+       let headerHeight: CGFloat = 130
       // mapView.frame = CGRect(origin: .zero, size: CGSize(width: view.bounds.width, height: headerHeight))
        //topView.frame = CGRect(origin: .zero, size: CGSize(width: view.bounds.width, height: headerHeight))
        conversationViewController.view.frame = CGRect(
@@ -75,5 +75,9 @@ class ChatMainViewController: UIViewController {
     func bindData() {
         labelName.text = self.name
         labelShopping.text = self.place
+    }
+    
+    func showDialog() {
+//        let customDialogStoaryboard = UIStoryboard(name: "CustomDialogStorybaord", bundle: <#T##Bundle?#>)
     }
 }
