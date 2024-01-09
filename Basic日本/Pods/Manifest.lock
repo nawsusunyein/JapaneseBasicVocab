@@ -4,19 +4,23 @@ PODS:
   - InputBarAccessoryView/Core (5.5.0)
   - MessageKit (3.8.0):
     - InputBarAccessoryView (~> 5.5.0)
+  - TrueTime (5.0.3)
 
 DEPENDENCIES:
   - MessageKit
+  - TrueTime
 
 SPEC REPOS:
   trunk:
     - InputBarAccessoryView
     - MessageKit
+    - TrueTime
 
 SPEC CHECKSUMS:
   InputBarAccessoryView: 1d7b0a672b36e370f01f264b3907ef39d03328e3
   MessageKit: a1ba0c69ebead94029867853eb44dd05b9b3f453
+  TrueTime: b49551ffafb28a9dee04e51b226f42a416010842
 
-PODFILE CHECKSUM: 2313948232337e542db37eb9c428189c93ebb50d
+PODFILE CHECKSUM: d36d5569045084c75e0debc92bb0721c00131bb1
 
 COCOAPODS: 1.13.0

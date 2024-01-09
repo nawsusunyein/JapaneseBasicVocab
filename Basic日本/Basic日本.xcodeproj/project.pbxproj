@@ -20,7 +20,6 @@
 		6A55D9E123F3BE27006B3265 /* SqliteError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A55D9E023F3BE27006B3265 /* SqliteError.swift */; };
 		6A55D9E323F3D928006B3265 /* VocabularyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A55D9E223F3D928006B3265 /* VocabularyModel.swift */; };
 		6A55D9E523F3DBC5006B3265 /* VocabularyOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A55D9E423F3DBC5006B3265 /* VocabularyOperations.swift */; };
-		6A5EC8D82B42E47F0008F4F2 /* Pods_Basic日本.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A5EC8D72B42E47F0008F4F2 /* Pods_Basic日本.framework */; };
 		6A5EC8DB2B42E4EB0008F4F2 /* ChatStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A5EC8DA2B42E4EB0008F4F2 /* ChatStoryboard.storyboard */; };
 		6A5EC8DD2B42E4FF0008F4F2 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5EC8DC2B42E4FF0008F4F2 /* ChatViewController.swift */; };
 		6A5EC8DF2B42F0CA0008F4F2 /* ChatMainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A5EC8DE2B42F0CA0008F4F2 /* ChatMainStoryboard.storyboard */; };
@@ -32,6 +31,8 @@
 		6A633E5223F7D456005F8D09 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A633E5123F7D456005F8D09 /* AppConstants.swift */; };
 		6A633E5523F7F50C005F8D09 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A633E5423F7F50C005F8D09 /* SettingsViewController.swift */; };
 		6A633E5723F7F544005F8D09 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A633E5623F7F544005F8D09 /* Storyboard.storyboard */; };
+		6A9535362B4DDA8A00351C6B /* TrueTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A9535352B4DDA8900351C6B /* TrueTime.framework */; };
+		6A9535382B4DDAB800351C6B /* Pods_Basic日本.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A9535372B4DDAB800351C6B /* Pods_Basic日本.framework */; };
 		6AB071A523E7D79300962DF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB071A423E7D79300962DF6 /* AppDelegate.swift */; };
 		6AB071A923E7D79300962DF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB071A823E7D79300962DF6 /* ViewController.swift */; };
 		6AB071AC23E7D79300962DF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AB071AA23E7D79300962DF6 /* Main.storyboard */; };
@@ -87,7 +88,6 @@
 		6A55D9E023F3BE27006B3265 /* SqliteError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqliteError.swift; sourceTree = "<group>"; };
 		6A55D9E223F3D928006B3265 /* VocabularyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyModel.swift; sourceTree = "<group>"; };
 		6A55D9E423F3DBC5006B3265 /* VocabularyOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyOperations.swift; sourceTree = "<group>"; };
-		6A5EC8D72B42E47F0008F4F2 /* Pods_Basic日本.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = "Pods_Basic日本.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A5EC8DA2B42E4EB0008F4F2 /* ChatStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatStoryboard.storyboard; sourceTree = "<group>"; };
 		6A5EC8DC2B42E4FF0008F4F2 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		6A5EC8DE2B42F0CA0008F4F2 /* ChatMainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatMainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -99,6 +99,8 @@
 		6A633E5123F7D456005F8D09 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		6A633E5423F7F50C005F8D09 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		6A633E5623F7F544005F8D09 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		6A9535352B4DDA8900351C6B /* TrueTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TrueTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A9535372B4DDAB800351C6B /* Pods_Basic日本.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = "Pods_Basic日本.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AB071A123E7D79300962DF6 /* Basic日本.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Basic日本.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AB071A423E7D79300962DF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AB071A823E7D79300962DF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -129,7 +131,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A5EC8D82B42E47F0008F4F2 /* Pods_Basic日本.framework in Frameworks */,
+				6A9535382B4DDAB800351C6B /* Pods_Basic日本.framework in Frameworks */,
+				6A9535362B4DDA8A00351C6B /* TrueTime.framework in Frameworks */,
 				23490F62242878E00093ADC7 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,7 +178,8 @@
 		23490A48242876680093ADC7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6A5EC8D72B42E47F0008F4F2 /* Pods_Basic日本.framework */,
+				6A9535372B4DDAB800351C6B /* Pods_Basic日本.framework */,
+				6A9535352B4DDA8900351C6B /* TrueTime.framework */,
 				6A4919542AEE1E03007A1569 /* FirebaseMessaging.framework */,
 				6A4919502AEE1DF1007A1569 /* FirebaseCoreInternal.framework */,
 				6A49194E2AEE1DEA007A1569 /* FirebaseCore.framework */,

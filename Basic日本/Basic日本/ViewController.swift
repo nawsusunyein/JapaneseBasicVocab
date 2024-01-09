@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TrueTime
 
 class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource{
     
@@ -178,11 +179,51 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     // Date setting
     
     func getTodayDate() {
+        // At an opportune time (e.g. app start):
+        let client = TrueTimeClient.sharedInstance
+        client.start()
+
+        // You can now use this instead of NSDate():
+        let now = client.referenceTime?.now()
+
+        // To block waiting for fetch, use the following:
+        client.fetchIfNeeded(completion:  { result in
+            switch result {
+            case let .success(referenceTime):
+                let now = referenceTime.now()
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                let nowDateString = dateFormatter.string(from: now)
+                let nowDateCurrentString = self.utcToLocal(dateStr: nowDateString)
+                print("now : \(now)")
+                print("now : \(nowDateCurrentString)")
+            case let .failure(error):
+                print("Error! \(error)")
+            }
+        })
+        
         let todayDate = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
+        
         let todayDateString = dateFormatter.string(from: todayDate)
         print("today date : \(todayDateString)")
+    }
+    
+    func utcToLocal(dateStr: String) -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        
+        if let date = dateFormatter.date(from: dateStr) {
+            //dateFormatter.timeZone = TimeZone(secondsFromGMT: 9 * 60 * 60)
+            dateFormatter.timeZone = TimeZone(identifier: "Asia/Tokyo")
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            dateFormatter.locale  = Locale(identifier: "ja-JP")
+            return dateFormatter.string(from: date)
+        }
+        return nil
     }
     
     func resetDateTime(resetTime : String) {
