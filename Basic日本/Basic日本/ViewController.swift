@@ -8,6 +8,7 @@
 
 import UIKit
 import TrueTime
+import SwiftToast
 
 class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource{
     
@@ -41,8 +42,18 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         //createMockBlog()
         getTodayDate()
         resetDateTime(resetTime: "00:00")
+       
     }
 
+    func showCustomDialog() {
+        let customStoryboard = UIStoryboard(name: "CustomDialogStoryboard", bundle: nil)
+        let customVC = customStoryboard.instantiateViewController(withIdentifier: "CustomDialogScene") as? CustomDialogViewController
+        customVC?.modalPresentationStyle = .overFullScreen
+        customVC?.titleLabel = "Logout successful"
+        customVC?.imgName = "mark"
+        self.present(customVC!, animated: true)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
@@ -66,10 +77,23 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
 //        let chatStoryboard = UIStoryboard(name: "ChatStoryboard", bundle: nil)
 //        let chatVC = chatStoryboard.instantiateViewController(withIdentifier: "ChatScene") as! ChatViewController
 //        self.navigationController?.pushViewController(chatVC, animated: true)
-        let chatMainStoryboard = UIStoryboard(name: "ChatMainStoryboard", bundle: nil)
-        let chatMainVC = chatMainStoryboard.instantiateViewController(withIdentifier: "ChatMainScene") as! ChatMainViewController
-        chatMainVC.initVC(username: "苏苏", place: "三宮商店街", chatStatus: "Valid")
-        self.navigationController?.pushViewController(chatMainVC, animated: true)
+//        let chatMainStoryboard = UIStoryboard(name: "ChatMainStoryboard", bundle: nil)
+//        let chatMainVC = chatMainStoryboard.instantiateViewController(withIdentifier: "ChatMainScene") as! ChatMainViewController
+//        chatMainVC.initVC(username: "苏苏", place: "三宮商店街", chatStatus: "Valid")
+//        self.navigationController?.pushViewController(chatMainVC, animated: true)
+        let customToast = CustomSwiftToast(
+                            duration: 5.0,
+                            minimumHeight: nil,
+                            aboveStatusBar: true,
+                            statusBarStyle: .lightContent,
+                            isUserInteractionEnabled: true,
+                            target: nil,
+                            style: .navigationBar,
+                            title: "CUSTOM VIEW Test Test Test Test Test OK OK Test Test OK OK Test Test Test Terst",
+                            imageName : "mark",
+                            isWarning: false
+                            )
+        present(customToast, withCustomSwiftToastView: CustomSwiftToastView(), animated: true)
     }
     
     @objc private func setBackButtonByChosenLanguage(notification:NSNotification){
@@ -144,7 +168,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     }
     
     private func setBackBarItemColor(colorNum : String){
-        self.navigationItem.backBarButtonItem?.tintColor = UIColor.red
+       // self.navigationItem.backBarButtonItem?.tintColor = UIColor.red
     }
     
     func createMockBlog() {
@@ -218,9 +242,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         
         if let date = dateFormatter.date(from: dateStr) {
             //dateFormatter.timeZone = TimeZone(secondsFromGMT: 9 * 60 * 60)
-            dateFormatter.timeZone = TimeZone(identifier: "Asia/Tokyo")
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             dateFormatter.locale  = Locale(identifier: "ja-JP")
+          //  dateFormatter.timeZone = TimeZone(identifier: "Asia/Singapore")
             return dateFormatter.string(from: date)
         }
         return nil

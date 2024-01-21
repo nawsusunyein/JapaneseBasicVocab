@@ -31,8 +31,10 @@
 		6A633E5223F7D456005F8D09 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A633E5123F7D456005F8D09 /* AppConstants.swift */; };
 		6A633E5523F7F50C005F8D09 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A633E5423F7F50C005F8D09 /* SettingsViewController.swift */; };
 		6A633E5723F7F544005F8D09 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A633E5623F7F544005F8D09 /* Storyboard.storyboard */; };
-		6A9535362B4DDA8A00351C6B /* TrueTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A9535352B4DDA8900351C6B /* TrueTime.framework */; };
-		6A9535382B4DDAB800351C6B /* Pods_Basic日本.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A9535372B4DDAB800351C6B /* Pods_Basic日本.framework */; };
+		6A6F94242B5D3C53008A8A2E /* Pods_Basic日本.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6F94232B5D3C53008A8A2E /* Pods_Basic日本.framework */; };
+		6A6F94262B5D3DCD008A8A2E /* CustomDialogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A6F94252B5D3DCD008A8A2E /* CustomDialogView.xib */; };
+		6A6F94282B5D3E9F008A8A2E /* CustomDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6F94272B5D3E9F008A8A2E /* CustomDialogView.swift */; };
+		6A95353A2B4DE0C400351C6B /* TrueTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A9535392B4DE0C400351C6B /* TrueTime.framework */; };
 		6AB071A523E7D79300962DF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB071A423E7D79300962DF6 /* AppDelegate.swift */; };
 		6AB071A923E7D79300962DF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB071A823E7D79300962DF6 /* ViewController.swift */; };
 		6AB071AC23E7D79300962DF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AB071AA23E7D79300962DF6 /* Main.storyboard */; };
@@ -99,8 +101,11 @@
 		6A633E5123F7D456005F8D09 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		6A633E5423F7F50C005F8D09 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		6A633E5623F7F544005F8D09 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		6A6F94232B5D3C53008A8A2E /* Pods_Basic日本.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = "Pods_Basic日本.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A6F94252B5D3DCD008A8A2E /* CustomDialogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDialogView.xib; sourceTree = "<group>"; };
+		6A6F94272B5D3E9F008A8A2E /* CustomDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDialogView.swift; sourceTree = "<group>"; };
 		6A9535352B4DDA8900351C6B /* TrueTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TrueTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A9535372B4DDAB800351C6B /* Pods_Basic日本.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = "Pods_Basic日本.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A9535392B4DE0C400351C6B /* TrueTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TrueTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AB071A123E7D79300962DF6 /* Basic日本.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Basic日本.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AB071A423E7D79300962DF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AB071A823E7D79300962DF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -131,8 +136,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A9535382B4DDAB800351C6B /* Pods_Basic日本.framework in Frameworks */,
-				6A9535362B4DDA8A00351C6B /* TrueTime.framework in Frameworks */,
+				6A6F94242B5D3C53008A8A2E /* Pods_Basic日本.framework in Frameworks */,
+				6A95353A2B4DE0C400351C6B /* TrueTime.framework in Frameworks */,
 				23490F62242878E00093ADC7 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,7 +183,8 @@
 		23490A48242876680093ADC7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6A9535372B4DDAB800351C6B /* Pods_Basic日本.framework */,
+				6A6F94232B5D3C53008A8A2E /* Pods_Basic日本.framework */,
+				6A9535392B4DE0C400351C6B /* TrueTime.framework */,
 				6A9535352B4DDA8900351C6B /* TrueTime.framework */,
 				6A4919542AEE1E03007A1569 /* FirebaseMessaging.framework */,
 				6A4919502AEE1DF1007A1569 /* FirebaseCoreInternal.framework */,
@@ -213,6 +219,8 @@
 			children = (
 				6A1026152B4522CB004DCDEA /* CustomDialogStoryboard.storyboard */,
 				6A1026172B4522E3004DCDEA /* CustomDialogViewController.swift */,
+				6A6F94252B5D3DCD008A8A2E /* CustomDialogView.xib */,
+				6A6F94272B5D3E9F008A8A2E /* CustomDialogView.swift */,
 			);
 			path = CustomDialog;
 			sourceTree = "<group>";
@@ -500,6 +508,7 @@
 				6A633E4823F7A552005F8D09 /* VocabListStoryBoard.storyboard in Resources */,
 				6AB071AC23E7D79300962DF6 /* Main.storyboard in Resources */,
 				6AB071D823E8543E00962DF6 /* HomeCollectionViewCell.xib in Resources */,
+				6A6F94262B5D3DCD008A8A2E /* CustomDialogView.xib in Resources */,
 				23D5AACD24249D93000412C0 /* Localizable.strings in Resources */,
 				6A633E5723F7F544005F8D09 /* Storyboard.storyboard in Resources */,
 				6A5EC8DB2B42E4EB0008F4F2 /* ChatStoryboard.storyboard in Resources */,
@@ -654,6 +663,7 @@
 				6A5EC8E12B42F0DA0008F4F2 /* ChatMainViewController.swift in Sources */,
 				6A55D9E523F3DBC5006B3265 /* VocabularyOperations.swift in Sources */,
 				6A633E5523F7F50C005F8D09 /* SettingsViewController.swift in Sources */,
+				6A6F94282B5D3E9F008A8A2E /* CustomDialogView.swift in Sources */,
 				6A55D9E323F3D928006B3265 /* VocabularyModel.swift in Sources */,
 				6AB071A523E7D79300962DF6 /* AppDelegate.swift in Sources */,
 				6AB071D723E8543E00962DF6 /* HomeCollectionViewCell.swift in Sources */,

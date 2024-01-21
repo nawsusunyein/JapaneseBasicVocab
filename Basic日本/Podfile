@@ -8,6 +8,7 @@ use_frameworks!
   # Pods for Basic日本
   pod 'MessageKit'
   pod 'TrueTime'
+  pod 'SwiftToast'
   
   target 'Basic日本Tests' do
     # Pods for testing

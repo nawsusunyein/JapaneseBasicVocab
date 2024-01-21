@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-Basic日本/Pods-Basic日本-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/InputBarAccessoryView/InputBarAccessoryView.framework
 ${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework
+${BUILT_PRODUCTS_DIR}/SwiftToast/SwiftToast.framework
 ${BUILT_PRODUCTS_DIR}/TrueTime/TrueTime.framework
